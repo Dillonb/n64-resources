@@ -1,0 +1,2 @@
+Another fun one that wasn't documented but caused me a lot of time to figure out: the RSP can do unaligned reads, whereas the CPU cannot
+The manual just says "you'll get SOMETHING back, but it may not be what you want" -- spoiler: you get back the correct result apparently, because tons of microcode does it

@@ -1,0 +1,431 @@
+<html>
+<body>
+The N64 begins by setting the Program Counter (PC) to 0x1FC0 0000.<br>
+At this address is something called the PIF ROM. This is a program that prepares the N64 to run the program stored on the cartridge.<br>
+The PIF ROM sets the following General Purpose Registers to the shown values:<br>
+<br>
+<center>
+<b>General Purpose Registers</b>
+<table border="1">
+<tr>
+<td>Register Number</td>
+<td>Register Name</td>
+<td>Set to value</td>
+</tr>
+<tr>
+<td>0</td>
+<td>r0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>at</td>
+<td>0</td>
+</tr>
+<tr>
+<td>2</td>
+<td>v0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>3</td>
+<td>v1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>4</td>
+<td>a0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>5</td>
+<td>a1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>6</td>
+<td>a2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>7</td>
+<td>a3</td>
+<td>0</td>
+</tr>
+<tr>
+<td>8</td>
+<td>t0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>9</td>
+<td>t1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>10</td>
+<td>t2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>11</td>
+<td>t3</td>
+<td>0</td>
+</tr>
+<tr>
+<td>12</td>
+<td>t4</td>
+<td>0</td>
+</tr>
+<tr>
+<td>13</td>
+<td>t5</td>
+<td>0</td>
+</tr>
+<tr>
+<td>14</td>
+<td>t6</td>
+<td>0</td>
+</tr>
+<tr>
+<td>15</td>
+<td>t7</td>
+<td>0</td>
+</tr>
+<tr>
+<td>16</td>
+<td>s0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>17</td>
+<td>s1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>18</td>
+<td>s2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>19</td>
+<td>s3</td>
+<td>0</td>
+</tr>
+<tr>
+<td>20</td>
+<td>s4</td>
+<td>0x1</td>
+</tr>
+<tr>
+<td>21</td>
+<td>s5</td>
+<td>0</td>
+</tr>
+<tr>
+<td>22</td>
+<td>s6</td>
+<td>0x3F</td>
+</tr>
+<tr>
+<td>23</td>
+<td>s7</td>
+<td>0</td>
+</tr>
+<tr>
+<td>24</td>
+<td>t8</td>
+<td>0</td>
+</tr>
+<tr>
+<td>25</td>
+<td>t9</td>
+<td>0</td>
+</tr>
+<tr>
+<td>26</td>
+<td>k0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>27</td>
+<td>k1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>28</td>
+<td>gp</td>
+<td>0</td>
+</tr>
+<tr>
+<td>29</td>
+<td>sp</td>
+<td>0xA4001FF0</td>
+</tr>
+<tr>
+<td>30</td>
+<td>s8</td>
+<td>0</td>
+</tr>
+<tr>
+<td>31</td>
+<td>ra</td>
+<td>0</td>
+</tr>
+</table>
+</center>
+<br>
+The registers of Coprocessor 0 are set to the following values:<br>
+<br>
+<center>
+<b>CP0 Registers</b>
+<table border="1">
+<tr>
+<td>Register Number</td>
+<td>Register Name</td>
+<td>Set to value</td>
+</tr>
+<tr>
+<td>0</td>
+<td>Index</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Random</td>
+<td>0x0000001F</td>
+</tr>
+<tr>
+<td>2</td>
+<td>EntryLo0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>3</td>
+<td>EntryLo1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Context</td>
+<td>0</td>
+</tr>
+<tr>
+<td>5</td>
+<td>PageMask</td>
+<td>0</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Wired</td>
+<td>0</td>
+</tr>
+<tr>
+<td>7</td>
+<td>7</td>
+<td>0</td>
+</tr>
+<tr>
+<td>8</td>
+<td>BadVAddr</td>
+<td>0</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Count</td>
+<td>0</td>
+</tr>
+<tr>
+<td>10</td>
+<td>EntryHi</td>
+<td>0</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Compare</td>
+<td>0</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Status</td>
+<td>0x70400004</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Cause</td>
+<td>0</td>
+</tr>
+<tr>
+<td>14</td>
+<td>EPC</td>
+<td>0</td>
+</tr>
+<tr>
+<td>15</td>
+<td>PRId</td>
+<td>0x00000B00</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Config</td>
+<td>0x0006E463</td>
+</tr>
+<tr>
+<td>17</td>
+<td>LLAddr</td>
+<td>0</td>
+</tr>
+<tr>
+<td>18</td>
+<td>WatchLo</td>
+<td>0</td>
+</tr>
+<tr>
+<td>19</td>
+<td>WatchHi</td>
+<td>0</td>
+</tr>
+<tr>
+<td>20</td>
+<td>XContext</td>
+<td>0</td>
+</tr>
+<tr>
+<td>21</td>
+<td>21</td>
+<td>0</td>
+</tr>
+<tr>
+<td>22</td>
+<td>22</td>
+<td>0</td>
+</tr>
+<tr>
+<td>23</td>
+<td>23</td>
+<td>0</td>
+</tr>
+<tr>
+<td>24</td>
+<td>24</td>
+<td>0</td>
+</tr>
+<tr>
+<td>25</td>
+<td>25</td>
+<td>0</td>
+</tr>
+<tr>
+<td>26</td>
+<td>Parity Error</td>
+<td>0</td>
+</tr>
+<tr>
+<td>27</td>
+<td>Cache Error</td>
+<td>0</td>
+</tr>
+<tr>
+<td>28</td>
+<td>TagLo</td>
+<td>0</td>
+</tr>
+<tr>
+<td>29</td>
+<td>TagHi</td>
+<td>0</td>
+</tr>
+<tr>
+<td>30</td>
+<td>ErrorEPC</td>
+<td>0</td>
+</tr>
+<tr>
+<td>31</td>
+<td>31</td>
+<td>0</td>
+</tr>
+</table>
+</center>
+<br>
+The PIF ROM also writes the value 0x01010101 to memory address 0x0430 0004.<br>
+The PIF ROM then copies the first 0x1000 bytes from the cartridge (located at 0xb000 0000)<br>
+to memory address 0xA400 0000.<br>
+Next the PIF ROM sets the PC to 0xA400 0040. Note that this skips the first 0x40 bytes of the program because that is where the cartridge header is stored.<br>
+<br>
+<center>
+<b>ROM Header</b>
+<table border="1">
+<tr>
+<td>Address</td>
+<td>What's stored there</td>
+</tr>
+<tr>
+<td>0x0000</td>
+<td>0x80 (first byte of ROM validation)</td>
+</tr>
+<tr>
+<td>0x0001</td>
+<td>0x37 (second byte of ROM validation)</td>
+</tr>
+<tr>
+<td>0x0002</td>
+<td>0x12 (I don't know what this is for)</td>
+</tr>
+<tr>
+<td>0x0003</td>
+<td>0x40 (I don't know what this is for)</td>
+</tr>
+<tr>
+<td>0x0004 - 0x0007</td>
+<td>ClockRate</td>
+</tr>
+<tr>
+<td>0x0008 - 0x000B</td>
+<td>Program Counter (PC)</td>
+</tr>
+<tr>
+<td>0x000C - 0x000F</td>
+<td>Release</td>
+</tr>
+<tr>
+<td>0x0010 - 0x0013</td>
+<td>CRC1</td>
+</tr>
+<tr>
+<td>0x0014 - 0x0017</td>
+<td>CRC2</td>
+</tr>
+<tr>
+<td>0x0018 - 0x001F</td>
+<td>Unknown (0)</td>
+</tr>
+<tr>
+<td>0x0020 - 0x0033</td>
+<td>Image name</td>
+</tr>
+<tr>
+<td>0x0034 - 0x0037</td>
+<td>Unknown (0)</td>
+</tr>
+<tr>
+<td>0x0038 - 0x003B</td>
+<td>Manufacturer ID</td>
+</tr>
+<tr>
+<td>0x003C - 0x003D</td>
+<td>Cartridge ID</td>
+</tr>
+<tr>
+<td>0x003E - 0x003F</td>
+<td>Country code</td>
+</tr>
+</table>
+</center>
+<br>
+You don't actually need to have a copy of the PIF ROM in your emulator,<br>
+you can just simulate the effects of it and it will work the same.<br><br>
+The values I have shown here for the CPU registers have been copied from Breakpoint's Project Unreality and they are what I use for Ultra 64. If something here is wrong please notify me by email: <a href="/cdn-cgi/l/email-protection#e094898da081899390ce8e8594"><span class="__cf_email__" data-cfemail="35415c5875545c46451b5b5041">[email&#160;protected]</span></a>.<br><br><center>Next up: Memory mapping
+</center>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>
