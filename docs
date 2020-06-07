@@ -1,0 +1,34 @@
+Here's a little bit of info about how the N64 boots up. It's quite widely known, but oh well, it can't hurt.
+
+Upon power on/reset, the N64 begins executing the IPL (initial program load) boot ROM at physical address 0x1fc00000 (kseg 1 address 0xbfc00000). The boot code pretty much just initialises the hardware, does a few checks and copies the cartridge boot code (cart offset 0x40-0x1000) to 0xa4000040 (RSP DMEM) and jumps to it. (After this, the cartridge boot code is in control, so it can vary, but the following is typically what will occur). At this point, a portion of the main program code (starting cart offset 0x1000) is DMA'd to the 4 byte address specified at cart offset 0x8 (in the cart header). This address is usually referred to as the "Boot address offset" or "Program Counter". This address is where the actual program will begin. Think of it as the "main" function of the program. However, before this happens, a CRC check is done on the cartridge boot code. This is usually done somewhere around RDRAM address 0x80000100 - 0x80000200. The results are compared to the two CRC values in the cart ROM's header. If they don't match, the N64 will just hang in an infinite loop (using the BGEZAL instruction), otherwise, execution will continue.
+
+Note that most emulators choose to not boot from the real PIF ROM and instead begin execution at 0xa4000040 (after copying the cart boot code to there). Of course, they set up all the registers to the values that the PIF ROM would put them in, first.
+
+Also, another quick note. The cartridge ROM is mapped at physical address 0x10000000 (kseg 1 address 0xb0000000).  
+
+
+
+^
+
+http://www.emutalk.net/threads/53938-N64-tech-documentation
+
+
+// look on docs section of n64 discord
+https://www.reddit.com/r/n64/comments/8qo5g0/so_you_want_to_mod_your_favourite_game_andor/
+
+
+^ pif rom is used to boot
+
+
+http://www.emulation64.com/ultra64/bootn64.html
+
+^ good doc
+
+
+http://en64.shoutwiki.com/wiki/Memory_map_detailed
+https://johnloomis.org/microchip/pic32/memory/memory.html <- for general mips memory mapping
+^ also references the pif boot rom
+
+
+// commented boot coode
+https://www.retroreversing.com/n64bootcode

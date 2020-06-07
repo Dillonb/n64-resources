@@ -1,0 +1,230 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title></title>
+</head>
+<body>
+<h2>MIPS Address Space</h2>
+
+<p>With a MIPS CPU the addresses you put in your programs are
+<i>never</i> the same as the physical addresses that come out of the
+chip (sometimes they are simply related, but they're not not same).
+We can refer to them as <i>program addresses</i> [<a href="#notes">note</a>] and <i>physical addresses</i>, respectively.
+
+</p><p>A MIPS CPU runs at one of two privilege levels: user and kernel.
+We may talk about <i>user mode</i> and <i>kernel mode</i>, but
+changing from one mode to the other never makes anything work
+differently; it just sometimes makes it illegal. In user mode,
+any program address with the most significant bit of the address set
+is illegal and causes a trap. Also, some instructions cause a trap in
+user mode.
+
+</p><p>Inte the MIPS memory map, shown below, the program address space is
+divided into four big areas with traditional (and thoroughly
+meaningless) names. Different things happen according to the area in
+which an address lies.
+
+</p><p><table><tbody><tr><td width="30%">
+<p><table border="">
+<tbody><tr><td>0xF000.0000</td><td rowspan="4" bgcolor="CCCCCC" align="center">Mapped (<tt>kseg2</tt>)
+</td></tr><tr><td>0xE000.0000
+</td></tr><tr><td>0xD000.0000
+</td></tr><tr><td>0xC000.0000
+</td></tr><tr><td>0xB000.0000</td><td rowspan="2" bgcolor="FFFFCC" align="center">Unmapped
+   uncached (<tt>kseg1</tt>)
+</td></tr><tr><td>0xA000.0000
+</td></tr><tr><td>0x9000.0000</td><td rowspan="2" bgcolor="CCCCFF" align="center">Unmapped
+   cached (<tt>kseg0</tt>)
+</td></tr><tr><td>0x8000.0000
+</td></tr><tr><td>0x7000.0000</td><td rowspan="8" bgcolor="CCCCCC" align="center">32-bit
+   user space<br><tt>kuseg</tt>
+</td></tr><tr><td>0x6000.0000
+</td></tr><tr><td>0x5000.0000
+</td></tr><tr><td>0x4000.0000
+</td></tr><tr><td>0x3000.0000
+</td></tr><tr><td>0x2000.0000
+</td></tr><tr><td>0x1000.0000
+</td></tr></tbody></table>
+</p></td><td>
+<table border="">
+   <tbody><tr><td><tt>kseg2</tt></td><td>0xC000.0000-0xFFFF.FFFF</td><td>1&nbsp;GB</td><td width="65%">
+      This area is only accessible in kernel mode but is translated
+      by through the MMU. Unless you are writing a serious operating
+      system, you will probably never have to use <tt>kseg2</tt>
+   </td></tr><tr><td><tt>kseg1</tt></td><td>0xA0000.0000-0xBFF.FFFF</td><td>512&nbsp;MB</td><td>
+      These addresses are mapped into physical addresses by stripping
+      off the leading 3 bits, giving a duplicate mapping of the low
+      512 MB of physical memory. Access to this area of memory does
+      not use the MMU or the cache. This area is most often used for
+      I/O addresses and boot ROM.
+   </td></tr><tr><td><tt>kseg0</tt></td><td>0x8000.0000-0x9FFF.FFFF</td><td>512&nbsp;MB</td><td>
+      These addresses are translated into physical addresses by
+      stripping off the top bit and mapping the remainder into the
+      low 512 MB of physical memory. Addresses in this region are
+      almost always accessed through the cache, so they may not be
+      used until the caches are properly initialized.
+    </td></tr><tr><td><tt>kuseg</tt></td><td>0x0000.00000-0x7FFF.FFFF</td><td>2&nbsp;GB</td><td>
+       These are addresses permitted in user mode. They are always
+       mapped through an MMU if one is implemented.
+ </td></tr></tbody></table>
+</td></tr></tbody></table>
+
+
+
+</p><h4><a name="notes">Notes</a></h4><a name="notes">
+
+<p></p><ol type="a">
+   <p></p><li>A <i>program address</i> in this sense is exactly the same
+      as a <i>virtual address</i> -- but for many people <i>virtual
+	 address</i> suggests operating system complications, such as
+      mapping disk space to memory, that aren't relevant here.
+</li></ol>
+
+<h4>Reference</h4>
+
+<p></p><dir>
+Sweetman, Dominic, <i>See MIPS Run</i>, Second Edition,<br>
+Morgan Kaufman, 2007. ISBN 0-12-088421-6<br>
+p 47-48.
+</dir>
+
+<h2>PIC32MX Memory Mapping</h2>
+
+<p>The MIPS core at the heart of the PIC32 has a number of advanced
+features designed to allow the separation of memory space dedicated to
+an application or applications from that of an operating system via
+the use of a <i>memory management unit</i> (MMU) and two distinct
+modes of operation: <i>user</i> and <i>kernel</i>. Since the PIC32MX
+family of devices is clearly targeting embedded-control applications
+that most likely would not require much of that complexity, the PIC32
+designers replaced the MMU with a simpler <i>fixed mapping
+   translation</i> (FMT) unit and a <i>bus matrix</i> (BMX) control
+mechanism.
+
+</p><p>The FMT allows the PIC32 to conform to the programming model used
+by all other MIPS-based designs so that standardized address spaces
+are used. This fixed but compatible scheme simplifies the design of
+tools and applications and the porting of code to the PIC32 while
+considerabley reducing the size and therefore the cost of the device.
+
+</p><p>The PIC32 physical addressing space includes four separate
+elements: RAM, Flash, Special Function Registers (SFR), and Boot ROM.
+These are physically assigned addresses as follows:
+
+</p><p><img src="memory_files/physical_space.gif">
+
+</p><p>The FMT translates between <i>physical</i> addresses and
+<i>virtual</i> (or <i>program</i>) addresses. Currently the PIC32
+(in the absence of an operating system) runs entirely in kernel mode.
+The virtual memory locations for the PIC32 processor are shown below:
+
+</p><p><img src="memory_files/virtual_space.gif">
+
+</p><p>A final note is required to clarify the reason for two virtual
+addresses being dedicated to the same Flash memory. Both point to the
+same physical memory space. The difference is only in the way the
+cache is applied. If a program accesses memory in <tt>kseg1</tt>,
+the cache is automatically disabled. Vice versa, if memory accesses
+through <tt>kseg0</tt> are routed through the cache mechanism.
+
+</p><p>Similarly, although not shown in the figure above, internal RAM
+is also mapped twice, once to 0x8000.0000 (<tt>kseg0</tt>) and
+once to 0xA000.0000 (<tt>kseg1</tt>).
+
+</p><h4>Reference</h4>
+
+</a><dir><a name="notes">
+   </a><p><a name="notes">Lucio Di Jasio, <i></i></a><i><a href="http://www.exploringpic32.com/">
+   Programming 32-bit Microcontrollers in C, Exploring
+      the PIC32</a></i>,<br> Newnes (<a href="http://elsevier.com/">Elsevier</a>), 2008.
+      ISBN 978-0-7506-8709-5.<br>
+      p. 130-135
+</p></dir>
+
+<h2>Discovering Memory Size</h2>
+
+<p>The Kernel Program Flash address space starts at
+physical address 0x1D000000, whereas the user program
+flash space starts at physical address
+0xBD000000 + BMXPUPBA register value.
+
+</p><p>Similarly, the internal RAM is also divided into Kernel
+and User partitions. The kernal RAM space starts at
+physical address 0x00000000, whereas the User RAM
+space starts at physical address 0xBF000000 +
+BMXDUDBA register value.
+
+</p><p>By default the entire Flash memory and RAM are
+mapped to the Kernel mode application only.
+
+</p><p>BMXPFMSZ is the bus matrix
+register that holds the total size of Program Flash
+Memory. BMXDRMSZ is the Data RAM Memory (DRM) size in bits.
+BMXBOOTSZ is the Boot Flash Memory (BFM) size in bits.
+The value 0x3000 is 12 KB (which di Jasio suggests) but we read
+0x2000 (8 KB).
+
+
+</p><h4>Reference</h4>
+
+<dir>
+<p><a href="https://johnloomis.org/microchip/docs/PIC32MX_Datasheet_v4.pdf"><i>PIC32MX Family Data
+   Sheet</i></a>, Microchip Technology, 2008.
+</p></dir>
+
+
+
+
+<h3><a name="mem2.c">C Example</a></h3><a name="mem2.c">
+
+</a><p><a name="mem2.c">Download </a><a href="https://johnloomis.org/microchip/pic32/memory/mem2.zip">mem2.zip</a>.
+
+</p><p>This example program prints the values of the bus matrix registers
+mentioned above.
+
+</p><p></p><hr>
+<!-- Generator: GNU source-highlight 2.1.2
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><font color="#000000">01:</font> <b><font color="#000080">#include</font></b> <font color="#FF0000">&lt;p32xxxx.h&gt;</font>
+<font color="#000000">02:</font> <b><font color="#000080">#include</font></b> <font color="#FF0000">"db_utils.h"</font>
+<font color="#000000">03:</font> 
+<font color="#000000">04:</font> 
+<font color="#000000">05:</font> <font color="#009900">int</font> <b><font color="#000000">main</font></b><font color="#990000">(</font><font color="#990000">)</font>
+<font color="#000000">06:</font> <font color="#FF0000">{</font>
+<font color="#000000">07:</font>         <b><font color="#000000">printf</font></b><font color="#990000">(</font><font color="#FF0000">"BMXPUPBA 0x%x\n"</font><font color="#990000">,</font>BMXPUPBA<font color="#990000">)</font><font color="#990000">;</font>
+<font color="#000000">08:</font>         <b><font color="#000000">printf</font></b><font color="#990000">(</font><font color="#FF0000">"BMXDKPBA 0x%x\n"</font><font color="#990000">,</font>BMXDKPBA<font color="#990000">)</font><font color="#990000">;</font>
+<font color="#000000">09:</font>         <b><font color="#000000">printf</font></b><font color="#990000">(</font><font color="#FF0000">"BMXDUPBA 0x%x\n"</font><font color="#990000">,</font>BMXDUPBA<font color="#990000">)</font><font color="#990000">;</font>
+<font color="#000000">10:</font>         <b><font color="#000000">printf</font></b><font color="#990000">(</font><font color="#FF0000">"RAM memory size BMXDRMSZ 0x%x (%d KB)\n "</font><font color="#990000">,</font>BMXDRMSZ<font color="#990000">,</font> <font color="#990000">(</font>BMXDRMSZ<font color="#990000">&gt;</font><font color="#990000">&gt;</font><font color="#993399">10</font><font color="#990000">)</font><font color="#990000">)</font><font color="#990000">;</font>
+<font color="#000000">11:</font>         <b><font color="#000000">printf</font></b><font color="#990000">(</font><font color="#FF0000">"FLASH memory size BMXPFMSZ 0x%x (%d KB)\n"</font><font color="#990000">,</font>BMXPFMSZ<font color="#990000">,</font><font color="#990000">(</font>BMXPFMSZ<font color="#990000">&gt;</font><font color="#990000">&gt;</font><font color="#993399">10</font><font color="#990000">)</font><font color="#990000">)</font><font color="#990000">;</font> 
+<font color="#000000">12:</font>         <b><font color="#000000">printf</font></b><font color="#990000">(</font><font color="#FF0000">"BOOT memory size BMXBOOTSZ 0x%x (%d KB)\n"</font><font color="#990000">,</font>BMXBOOTSZ<font color="#990000">,</font><font color="#990000">(</font>BMXBOOTSZ<font color="#990000">&gt;</font><font color="#990000">&gt;</font><font color="#993399">10</font><font color="#990000">)</font><font color="#990000">)</font><font color="#990000">;</font>
+<font color="#000000">13:</font>         <b><font color="#000000">DBPUTS</font></b><font color="#990000">(</font><font color="#FF0000">"Program terminated. Click HALT and then RESET to stop the microcontroller. \n"</font><font color="#990000">)</font><font color="#990000">;</font>
+<font color="#000000">14:</font>         <b><font color="#0000FF">return</font></b> <font color="#993399">0</font><font color="#990000">;</font>
+<font color="#000000">15:</font> <font color="#FF0000">}</font>
+</tt></pre>
+<p></p><hr>
+
+<h3>Results</h3>
+
+<p>Running the program on the PIC32 Starter kit gave the following
+output:
+
+</p><pre>BMXPUPBA 0x0
+BMXDKPBA 0x0
+BMXDUPBA 0x0
+
+RAM   memory size BMXDRMSZ 0x8000 (32 KB)
+FLASH memory size BMXPFMSZ 0x80000 (512 KB)
+BOOT  memory size BMXBOOTSZ 0x2000 (8 KB)
+</pre>
+
+
+
+<p></p><hr>
+
+<p>Maintained by <a href="https://johnloomis.org/"> John Loomis</a>, 
+last updated <i>28 July 2008 </i></p>
+
+
+<script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'}),_trfd.push({'ap':'cpbh'},{'server':'a2plvcpnl293276'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src="memory_files/tcc_l.js"></script>
+</body></html>
