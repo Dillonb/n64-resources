@@ -1,0 +1,1158 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>Nintendo 64 Specifications</title>
+</head>
+
+<body vlink="#0033cc" text="#000000" link="#0033cc" bgcolor="#ffffff" alink="#0033cc">
+<!--Support block begin-->
+<script type="text/javascript">
+function showhide() {
+//  document.getElementById("NP3XcFQU9w5LCA").style.width = "120px";
+  var el = document.getElementById("child NP3XcFQU9w5LCA");
+  el.style.display = (el.style.display==''||el.style.display=='block')?'none':'block';
+}
+</script>
+<!-- Relative positioning doesn't work in IE? -->
+<div id="NP3XcFQU9w5LCA" style="position: absolute; right: 0px; top: 0px; background-color:#000; filter:alpha(opacity=75);-moz-opacity: 0.7; opacity:0.7;">
+<div style="width:100%;height:10px;font-family:arial;font-size:8px;color:white;text-align:center;background-color:blue" onclick="showhide();">
+SPONSORED LINKS
+</div>
+<div id="child NP3XcFQU9w5LCA">
+<div>
+<!-- Piwik -->
+<script type="text/javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://www.icequake.net/piwik/" : "http://www.icequake.net/piwik/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="n64tek_files/piwik.js" type="text/javascript"></script><script type="text/javascript">
+try {
+var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 1);
+piwikTracker.trackPageView();
+piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img src="http://www.icequake.net/piwik/piwik.php?idsite=1" style="border:0" alt=""/></p></noscript>
+<!-- End Piwik Tag -->
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-3219305427608346";
+google_ad_width = 120;
+google_ad_height = 240;
+google_ad_format = "120x240_as";
+google_ad_type = "text_image";
+//2006-11-14: default
+google_ad_channel = "3082578615";
+//--></script>
+<script type="text/javascript" src="n64tek_files/show_ads.js">
+</script>
+<script type="text/javascript">
+function Offset() {
+  if (document.documentElement && document.documentElement.scrollTop) {
+    return document.documentElement.scrollTop;
+  }
+  else if (document.body) {
+    return document.body.scrollTop;
+  }
+  return pageYOffset;
+}
+
+function UpdateTimer() {
+  var style="position: absolute; right: 0px; top: "+Offset()+"px; background-color:#000; filter:alpha(opacity=75);-moz-opacity: 0.7; opacity:0.7;";
+  document.getElementById("NP3XcFQU9w5LCA").setAttribute("style", style);
+  setTimeout("UpdateTimer()", 100);
+}
+//Enable the div following of the browser scrolling
+//setTimeout("UpdateTimer()", 100);
+  var style="position: absolute; right: 0px; top: "+Offset()+"px; background-color:#000; filter:alpha(opacity=75);-moz-opacity: 0.7; opacity:0.7;";
+  document.getElementById("NP3XcFQU9w5LCA").setAttribute("style", style);
+</script>
+</div>
+
+</div> <!-- child divid -->
+</div>
+<!--Support block end-->
+
+
+<center>
+<a name="N64TEK"></a>
+<font size="+3">N64TEK</font><br>
+Nintendo 64 - Technical Info - Last Update: 31/01/08
+</center>
+
+<table width="100%">
+	<tbody><tr>
+		<td widht="30%" valign="top">
+
+<table width="100%">
+	<tbody><tr bgcolor="#cccccc">
+		<td><a name="gbareference"></a>
+			<font size="+2">&nbsp;N64 Reference</font>
+		</td>
+	</tr>
+</tbody></table><br>
+
+<b>Overview</b><br>
+<a href="#technicaldata">Technical Data</a><br>
+<a href="#memorymapoverview">Memory Map Overview</a><br>
+<a href="#memorymapoverview">Memory Map Detailed</a><br>
+<br>
+<b>Hardware Programming</b><br>
+<a href="#sp">SP Registers</a><br>
+<a href="#dpcommand">DP Command Registers</a><br>
+<a href="#dpspan">DP Span Registers</a><br>
+<a href="#mipsinterface">MIPS Interface Registers</a><br>
+<a href="#videointerface">Video Interface Registers</a><br>
+<br>
+<b>Other</b><br>
+<a href="#cartridges">Cartridges</a><br>
+<br>
+		</td>
+		<td widht="30%" valign="top">
+
+<table width="100%">
+	<tbody><tr bgcolor="#cccccc">
+		<td><a name="gbareference"></a>
+			<font size="+2">&nbsp;CPU Reference</font>
+		</td>
+	</tr>
+</tbody></table><br>
+
+<b>General Information</b><br>
+<a href="#cpuregisterset">CPU Register Set</a><br>
+<br>
+<b>The Instruction Set</b><br>
+<a href="#mipsinstructionset">MIPS Instruction Set</a><br>
+<br>
+<b>About N64TEK</b><br>
+<a href="#aboutthisdocument">About this Document</a><br>
+<br>
+		</td>
+	</tr>
+</tbody></table>
+
+<!-- Tecnical Data -->
+<table width="100%">
+	<tbody><tr bgcolor="#cccccc">
+		<td>
+		<a name="technicaldata"></a><font size="+2">&nbsp;Technical Data</font>
+		</td>
+	</tr>
+</tbody></table><br>
+
+<b>Processors</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+	<tbody><tr>
+		<td><pre>  64bit MIPS Risc CPU, 93.75 MHz (R4300i series)
+  64bit MIPS Risc Co-Processor, 62.5 MHz (RCP)
+    Built-in Audio/Video Vector Processor (RSP)
+    Built-in Pixel Drawing Processor (RDP)</pre></td>
+	</tr>
+</tbody></table>
+
+<b>Memory</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+	<tbody><tr>
+		<td><pre>  4.5 MB Rambus DRAM (36 megabits)
+  Rambus DRAM subsystem
+  Custom 9-bit Rambus Bus (to the DRAM)</pre></td>
+	</tr>
+</tbody></table>
+
+<b>Video</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+	<tbody><tr>
+		<td><pre>  Resoloutions: 256x224 to 640x480. PAL also 768x576
+  Video Output: RF, Stereo A/V, S-Video
+  Colour:       21-bit colour video output, 32-bit RGPA, pixel colour frame buffer support</pre></td>
+	</tr>
+</tbody></table>
+
+<b>Audio</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+	<tbody><tr>
+		<td><pre>  Digital Sound
+  Wavetable Synthesis</pre></td>
+	</tr>
+</tbody></table>
+
+<b>Dimensions</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+	<tbody><tr>
+		<td><pre>  Width:  260mm (10.23")
+  Depth:  190mm (7.48")
+  Height: 73mm (2.87")
+  Weight: 1.1kg (2.42 lb.)</pre></td>
+	</tr>
+</tbody></table><br>
+
+<!-- Memory Map -->
+<table width="100%">
+	<tbody><tr bgcolor="#cccccc">
+		<td>
+		<a name="memorymapoverview"></a><font size="+2">&nbsp;Memory Map Overview</font>
+		</td>
+	</tr>
+</tbody></table><br>
+
+<b>Memory Map</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+	<tbody><tr>
+		<td><pre>  00000000-03EFFFFF   RDRAM Memory
+  03F00000-03FFFFFF   RDRAM Registers
+  04000000-040FFFFF   SP Registers
+  04100000-041FFFFF   DP Command Registers
+  04200000-042FFFFF   DP Span Registers
+  04300000-043FFFFF   MIPS Interface (MI) Registers
+  04400000-044FFFFF   Video Interface (VI) Registers
+  04500000-045FFFFF   Audio Interface (AI) Registers
+  04600000-046FFFFF   Peripheral Interface (PI) Registers
+  04700000-047FFFFF   RDRAM Interface (RI) Registers
+  04800000-048FFFFF   Serial Interface (SI) Registers
+  04900000-04FFFFFF   Unused
+  05000000-05FFFFFF   Cartridge Domain 2 Address 1
+  06000000-07FFFFFF   Cartridge Domain 1 Address 1
+  08000000-0FFFFFFF   Cartridge Domain 2 Address 2
+  10000000-1FBFFFFF   Cartridge Domain 1 Address 2
+  1FC00000-1FC007BF   PIF Boot ROM
+  1FC007C0-1FC007FF   PIF RAM
+  1FC00800-1FCFFFFF   Reserved
+  1FD00000-7FFFFFFF   Cartridge Domain 1 Address 3
+  80000000-FFFFFFFF   External SysAD Device
+		</pre></td>
+	</tr>
+</tbody></table>
+
+<table width="100%">
+	<tbody><tr bgcolor="#cccccc">
+		<td>
+		<a name="memorymapdetailed"></a><font size="+2">&nbsp;Memory Map Detailed</font>
+		</td>
+	</tr>
+</tbody></table><br>
+
+<b>RDRAM Memory</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+	<tbody><tr>
+		<td><pre>  0x00000000  ..   R/W  RDRAM range 0 (2 MB)
+  0x00200000  ..   R/W  RDRAM range 1 (2 MB)
+  0x00400000       -    Unused
+		</pre></td>
+	</tr>
+</tbody></table>
+
+<b>RDRAM Registers</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+	<tbody><tr>
+		<td><pre>  0x03F00000  4    R/W  RDRAM_CONFIG_REG or RDRAM_DEVICE_TYPE_REG
+  0x03F00004  4    R/W  RDRAM_DEVICE_ID_REG
+  0x03F00008  4    R/W  RDRAM_DELAY_REG
+  0x03F0000C  4    R/W  RDRAM_MODE_REG
+  0x03F00010  4    R/W  RDRAM_REF_INTERVAL_REG
+  0x03F00014  4    R/W  RDRAM_REF_ROW_REG
+  0x03F00018  4    R/W  RDRAM_RAS_INTERVAL_REG
+  0x03F0001C  4    R/W  RDRAM_MIN_INTERVAL_REG
+  0x03F00020  4    R/W  RDRAM_ADDR_SELECT_REG
+  0x03F00024  4    R/W  RDRAM_DEVICE_MANUF_REG
+  0x03F00028       -    Unknown
+		</pre></td>
+	</tr>
+</tbody></table>
+
+<b>SP Registers</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+	<tbody><tr>
+		<td><pre>  0x04000000  ..   R/W  SP_DMEM read/write (4 KB)
+  0x04001000  ..   R/W  SP_IMEM read/write (4 KB)
+  0x04002000  -    -    Unused
+  0x04040000  4    R/W  SP_MEM_ADDR_REG   Master, SP memory address
+  0x04040004  4    R/W  SP_DRAM_ADDR_REG  Slave, SP DRAM DMA address
+  0x04040008  4    R/W  SP_RD_LEN_REG     SP read DMA length
+  0x0404000C  4    R/W  SP_WR_LEN_REG     SP write DMA length
+  0x04040010  4    R/W  SP_STATUS_REG     SP status
+  0x04040014  4    R    SP_DMA_FULL_REG   SP DMA full
+  0x04040018  4    R    SP_DMA_BUSY_REG   SP DMA busy
+  0x0404001C  4    R/W  SP_SEMAPHORE_REG  SP semaphore
+  0x04040020  -    -    Unused
+  0x04080000  4    R/W  SP_PC_REG         SP PC
+  0x04080004  4    R/W  SP_IBIST_REG      SP IMEM BIST REG
+  0x04080008  -    -    Unused
+		</pre></td>
+	</tr>
+</tbody></table>
+
+<table width="100%">
+	<tbody><tr bgcolor="#cccccc">
+		<td>
+		<a name="sp"></a><font size="+2">&nbsp;SP Registers</font>
+		</td>
+	</tr>
+</tbody></table><br>
+
+<b>0x04040000 - SP_MEM_ADDR_REG - Master, SP memory address (Read/Write)</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td><pre>  Bit   Expl.
+  0-11  DMEM/IMEM address
+  12    0=DMEM,1=IMEM
+</pre></td>
+</tr>
+</tbody></table>
+
+<b>0x04040004 - SP_DRAM_ADDR_REG - Slave, SP DRAM DMA address (Read/Write)</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td><pre>  Bit   Expl.
+  0-23  RDRAM address
+</pre></td>
+</tr>
+</tbody></table>
+
+<b>0x04040008 - SP_RD_LEN_REG - SP read DMA length (Read/Write)</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td><pre>  Bit   Expl.
+  0-11  length
+  12-19 count
+  20-31 skip
+</pre></td>
+</tr>
+</tbody></table>
+direction: I/DMEM &lt;- RDRAM<br><br>
+
+<b>0x0404000C - SP_WR_LEN_REG - SP write DMA length (Read/Write)</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td><pre>  Bit   Expl.
+  0-11  length
+  12-19 count
+  20-31 skip
+</pre></td>
+</tr>
+</tbody></table>
+direction: I/DMEM to RDRAM<br><br>
+
+<b>0x04040010 - SP_STATUS_REG - SP status (Read/Write)</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td><pre>Write:
+  Bit   Expl.
+  0     clear halt
+  1     set halt
+  2     clear broke
+  3     clear intr
+  4     set intr
+  5     clear sstep
+  6     set sstep
+  7     clear intr on break
+  8     set intr on break
+  9     clear signal 0
+  10    set signal 0
+  11    clear signal 1
+  12    set signal 1
+  13    clear signal 2
+  14    set signal 2
+  15    clear signal 3
+  16    set signal 3
+  17    clear signal 4
+  18    set signal 4
+  19    clear signal 5
+  20    set signal 5
+  21    clear signal 6
+  22    set signal 6
+  23    clear signal 7
+  24    set signal 7
+
+Read:
+  Bit   Expl.
+  0     halt
+  1     broke
+  2     dma busy
+  3     dma full
+  4     io full
+  5     single step
+  6     interrupt on break
+  7     signal 0 set
+  8     signal 1 set
+  9     signal 2 set
+  10    signal 3 set
+  11    signal 4 set
+  12    signal 5 set
+  13    signal 6 set
+  14    signal 7 set
+</pre></td>
+</tr>
+</tbody></table>
+
+<b>0x04040014 - SP_DMA_FULL_REG - SP DMA full (Read)</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td><pre>  Bit   Expl.
+  0     valid bit
+</pre></td>
+</tr>
+</tbody></table>
+dma full<br><br>
+
+<b>0x04040018 - SP_DMA_BUSY_REG - SP DMA busy (Read)</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td><pre>  Bit   Expl.
+  0     valid bit
+</pre></td>
+</tr>
+</tbody></table>
+dma busy<br><br>
+
+<b>0x0404001C - SP_SEMAPHORE_REG - SP semaphore (Read/Write)</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td><pre>Write:
+  Bit   Expl.
+  -     clear semaphore flag
+
+Read:
+  Bit   Expl.
+  0     semaphore flag (set on read)
+</pre></td>
+</tr>
+</tbody></table>
+
+<b>0x04080000 - SP_PC_REG - SP PC (Read/Write)</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td><pre>Write:
+  Bit   Expl.
+  0     BIST check
+  1     BIST go
+  2     BIST clear
+
+Read:
+  Bit   Expl.
+  0     BIST check
+  1     BIST go
+  2     BIST done
+  3-6   BIST fail
+</pre></td>
+</tr>
+</tbody></table>
+
+<b>0x04080004 - SP_IBIST_REG - SP IMEM BIST REG (Read/Write)</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td><pre>  Bit   Expl.
+  0-11  program counter
+</pre></td>
+</tr>
+</tbody></table>
+
+<table width="100%">
+	<tbody><tr bgcolor="#cccccc">
+		<td>
+		<a name="dpcommand"></a><font size="+2">&nbsp;DP Command Registers</font>
+		</td>
+	</tr>
+</tbody></table><br>
+
+<b>0x04100000 - DPC_START_REG - DP CMD DMA start (Read/Write)</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td><pre>  Bit   Expl.
+  0-23  DMEM/RDRAM start address
+</pre></td>
+</tr>
+</tbody></table>
+
+<b>0x04100004 - DPC_END_REG - DP CMD DMA end (Read/Write)</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td><pre>  Bit   Expl.
+  0-23  DMEM/RDRAM end address
+</pre></td>
+</tr>
+</tbody></table>
+
+<b>0x04100008 - DPC_CURRENT_REG - DP CMD DMA end (Read)</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td><pre>  Bit   Expl.
+  0-23  DMEM/RDRAM current address
+</pre></td>
+</tr>
+</tbody></table>
+
+<b>0x0410000C - DPC_STATUS_REG - DP CMD status (Read/Write)</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td><pre>Write:
+  Bit   Expl.
+  0     clear xbus_dmem_dma
+  1     set xbus_dmem_dma
+  2     clear freeze
+  3     set freeze
+  4     clear flush
+  5     set flush
+  6     clear tmem ctr
+  7     clear pipe ctr
+  8     clear cmd ctr
+  9     clear clock ctr
+
+Read:
+  Bit   Expl.
+  0     xbus_dmem_dma
+  1     freeze
+  2     flush
+  3     start gclk
+  4     tmem busy
+  5     pipe busy
+  6     cmd busy
+  7     cbuf ready
+  8     dma busy
+  9     end valid
+  10    start valid
+</pre></td>
+</tr>
+</tbody></table>
+
+<b>0x04100010 - DPC_CLOCK_REG - DP clock counter (Read)</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td><pre>  Bit   Expl.
+  0-23  clock counter
+</pre></td>
+</tr>
+</tbody></table>
+
+<b>0x04100014 - DPC_BUFBUSY_REG - DP buffer busy counter (Read)</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td><pre>  Bit   Expl.
+  0-23  clock counter
+</pre></td>
+</tr>
+</tbody></table>
+
+<b>0x04100018 - DPC_PIPEBUSY_REG - DP pipe busy counter (Read)</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td><pre>  Bit   Expl.
+  0-23  clock counter
+</pre></td>
+</tr>
+</tbody></table>
+
+<b>0x0410001C - DPC_TMEM_REG - DP TMEM load counter (Read)</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td><pre>  Bit   Expl.
+  0-23  clock counter
+</pre></td>
+</tr>
+</tbody></table><br>
+
+<table width="100%">
+	<tbody><tr bgcolor="#cccccc">
+		<td>
+		<a name="dpspan"></a><font size="+2">&nbsp;DP Span Registers</font>
+		</td>
+	</tr>
+</tbody></table><br>
+
+<b>0x04200000 - DPS_TBIST_REG - DP tmem bist (Read/Write)</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td><pre>Write:
+  Bit   Expl.
+  0     BIST check
+  1     BIST go 
+  2     BIST clear
+
+Read:
+  Bit   Expl.
+  0     BIST check
+  1     BIST go
+  2     BIST done
+  3-10  BIST fail
+</pre></td>
+</tr>
+</tbody></table>
+
+<b>0x04200004 - DPS_TEST_MODE_REG - DP span test mode (Read/Write)</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td><pre>  Bit   Expl.
+  0     Span buffer test access enable
+</pre></td>
+</tr>
+</tbody></table>
+
+<b>0x04200008 - DPS_BUFTEST_ADDR_REG - DP span buffer test address (Read/Write)</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td><pre>  Bit   Expl.
+  0-6   bits
+</pre></td>
+</tr>
+</tbody></table>
+
+<b>0x0420000C - DPS_BUFTEST_DATA_REG - DP span buffer test data (Read/Write)</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td><pre>  Bit   Expl.
+  0-31  span buffer data
+</pre></td>
+</tr>
+</tbody></table><br>
+
+<table width="100%">
+	<tbody><tr bgcolor="#cccccc">
+		<td>
+		<a name="mipsinterface"></a><font size="+2">&nbsp;MIPS Interface (MI) Registers</font>
+		</td>
+	</tr>
+</tbody></table><br>
+
+<b>0x04300000 - MI_INIT_MODE_REG or MI_MODE_REG - MI init mode (Read/Write)</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td><pre>Write:
+  Bit   Expl.
+  0-6   init length
+  7     clear init mode
+  8     set init mode
+  9     clr ebus test mode
+  10    set ebus test mode
+  11    clear DP interrupt
+  12    clear RDRAM reg
+  13    set RDRAM reg mode
+
+Read:
+  Bit   Expl.
+  0-6   init length
+  7     init mode
+  8     ebus test mode
+  9     RDRAM reg mode
+</pre></td>
+</tr>
+</tbody></table>
+
+<b>0x04300004 - MI_VERSION_REG or MI_NOOP_REG - MI version (Read)</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td><pre>  Bit   Expl.
+  0-7   io
+  8-15  rac
+  16-23 rdp
+  24-31 rsp
+</pre></td>
+</tr>
+</tbody></table>
+Project64 (1.4): 0x02020102<br><br>
+
+<b>0x04300008 - MI_INTR_REG - MI interrupt (Read)</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td><pre>  Bit   Expl.
+  0     SP intr
+  1     SI intr
+  2     AI intr
+  3     VI intr
+  4     PI intr
+  5     DP intr
+</pre></td>
+</tr>
+</tbody></table>
+
+<b>0x0430000C - MI_INTR_MASK_REG - MI interrupt mask (Read/Write)</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td><pre>Write:
+  Bit   Expl.
+  0     clear SP mask
+  1     set SP mask
+  2     clear SI mask
+  3     set SI mask
+  4     clear AI mask
+  5     set AI mask
+  6     clear VI mask
+  7     set VI mask
+  8     clear PI mask
+  9     set PI mask
+  10    clear DP mask
+  11    set DP mask
+
+Read:
+  Bit   Expl.
+  0     SP intr mask
+  1     SI intr mask
+  2     AI intr mask
+  3     VI intr mask
+  4     PI intr mask
+  5     DP intr mask
+</pre></td>
+</tr>
+</tbody></table><br>
+
+<table width="100%">
+	<tbody><tr bgcolor="#cccccc">
+		<td>
+		<a name="videointerface"></a><font size="+2">&nbsp;Video Interface (VI) Registers</font>
+		</td>
+	</tr>
+</tbody></table><br>
+
+<b>0x04400000 - VI_STATUS_REG or VI_CONTROL_REG - VI status/control (Read/Write)</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td><pre>  Bit   Expl.
+  0-1   Type (Pixel Size) (0-3, see below)
+         0 = blank    (no data, no sync)
+         1 = reserved
+         2 = 5/5/5/3  ("16" bit)
+         3 = 8/8/8/8  (32 bit)
+  2     Gamma Dither Enable (normally on, unless "special effect")
+  3     Gamma Enable (normally on, unless MGEG/JPEG)
+  4     DIVOT Enable (normally on if antialiased unless decal lines)
+  5     reserved - always off
+  6     serrate (always on if interlaced, off if not)
+  7     reserved - diagnostics only
+  8-9   anti-alias (aa) mode
+         0 = aa &amp; resamp (always fetch extra lines)
+		 1 = aa &amp; resamp (fetch extra lines if needed)
+		 2 = resamp only (treat as all fully covered)
+		 3 = neither (replicate pixels, no interpolate)
+  11    reserved - diagnostics only
+  12-15 reserved
+</pre></td>
+</tr>
+</tbody></table>
+
+<b>0x04400004 - VI_ORIGIN_REG or VI_DRAM_ADDR_REG - VI origin (Read/Write)</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td><pre>  Bit   Expl.
+  0-23  frame buffer origin in bytes
+</pre></td>
+</tr>
+</tbody></table>
+
+<b>0x04400008 - VI_WIDTH_REG or VI_H_WIDTH_REG - VI width (Read/Write)</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td><pre>  Bit   Expl.
+  0-11  frame buffer line width in pixels
+</pre></td>
+</tr>
+</tbody></table>
+
+<b>0x0440000C - VI_INTR_REG or VI_V_INTR_REG - VI vertical intr (Read/Write)</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td><pre>  Bit   Expl.
+  0-9   interrupt when current half-line = V_INTR
+</pre></td>
+</tr>
+</tbody></table>
+
+<b>0x04400010 - VI_CURRENT_REG or VI_V_CURRENT_LINE_REG - VI current vertical line (Read/Write)</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td><pre>  Bit   Expl.
+  0-9   current half line, sampled once per line - Writes clears interrupt line
+</pre></td>
+</tr>
+</tbody></table>
+current half line, sampled once per line (the lsb of V_CURRENT is 
+constant within a field, and interlaced modes gives the field number - 
+which is constant for non-interlaced modes) - Any write to this register
+ will clear interrupt line<br><br>
+
+<b>0x04400014 - VI_BURST_REG or VI_TIMING_REG - VI video timing (Read/Write)</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td><pre>  Bit   Expl.
+  0-7   horizontal sync width in pixels
+  8-15  color burst width in pixels
+  16-19 vertical sync width in half lines
+  20-29 start of color burst in pixels from h-sync
+</pre></td>
+</tr>
+</tbody></table>
+
+<b>0x04400018 - VI_V_SYNC_REG - VI vertical sync (Read/Write)</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td><pre>  Bit   Expl.
+  0-9   number of half-lines per field
+</pre></td>
+</tr>
+</tbody></table>
+
+<b>0x0440001C - VI_H_SYNC_REG - VI horizontal sync (Read/Write)</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td><pre>  Bit   Expl.
+  0-11  total duration of a line in 1/4 pixel
+  16-20 a 5-bit leap pattern used for PAL only (h_sync_period)
+</pre></td>
+</tr>
+</tbody></table>
+
+<b>0x04400020 - VI_LEAP_REG or VI_H_SYNC_LEAP_REG - VI horizontal sync leap (Read/Write)</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td><pre>  Bit   Expl.
+  0-11  identical to h_sync_period
+  16-27 identical to h_sync_period
+</pre></td>
+</tr>
+</tbody></table>
+
+<b>0x04400024 - VI_H_START_REG or VI_H_VIDEO_REG - VI horizontal video (Read/Write)</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td><pre>  Bit   Expl.
+  0-9   end of active video in screen pixels
+  16-25 start of active video in screen pixels
+</pre></td>
+</tr>
+</tbody></table>
+
+<b>0x04400028 - VI_V_START_REG or VI_V_VIDEO_REG - VI vertical video (Read/Write)</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td><pre>  Bit   Expl.
+  0-9   end of active video in screen half-lines
+  16-25 start of active video in screen half-lines
+</pre></td>
+</tr>
+</tbody></table>
+
+<b>0x0440002C - VI_V_BURST_REG - VI vertical burst (Read/Write)</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td><pre>  Bit   Expl.
+  0-9   end of color burst enable in half-lines
+  16-25 start of color burst enable in half-lines
+</pre></td>
+</tr>
+</tbody></table>
+
+<b>0x04400030 - VI_X_SCALE_REG - VI x-scale (Read/Write)</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td><pre>  Bit   Expl.
+  0-11  1/horizontal scale up factor (2.10 format)
+  16-27 horizontal subpixel offset (2.10 format)
+</pre></td>
+</tr>
+</tbody></table>
+
+<b>0x04400034 - VI_Y_SCALE_REG - VI y-scale (Read/Write)</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td><pre>  Bit   Expl.
+  0-11  1/vertical scale up factor (2.10 format)
+  16-27 vertical subpixel offset (2.10 format)
+</pre></td>
+</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<!-- Cartridges -->
+<table width="100%">
+	<tbody><tr bgcolor="#cccccc">
+		<td>
+		<a name="cartridges"></a><font size="+2">&nbsp;Cartridges</font>
+		</td>
+	</tr>
+</tbody></table><br>
+
+<b>Rom</b><br>
+<a href="#cartridgeheader">Cartridge Header</a><br>
+
+<br>
+<br>
+
+<!-- Cartridge Header -->
+<table width="100%">
+	<tbody><tr bgcolor="#cccccc">
+		<td>
+		<a name="cartridgeheader"></a><font size="+2">&nbsp;Cartridge Header</font>
+		</td>
+	</tr>
+</tbody></table><br>
+
+<b>Header Overview</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+	<tbody><tr>
+		<td><pre>  Address Bytes Expl.
+  0x0000  1     initial PI_BSB_DOM1_LAT_REG value (0x80)
+  0x0001  1     initial PI_BSB_DOM1_PGS_REG value (0x37)
+  0x0002  1     initial PI_BSB_DOM1_PWD_REG value (0x12)
+  0x0003  1     initial PI_BSB_DOM1_PGS_REG value (0x40)
+  0x0004  4     ClockRate
+  0x0008  4     Program Counter (PC)
+  0x000C  4     Release
+  0x0010  4     CRC1
+  0x0014  4     CRC2
+  0x0018  8     Unknown (0x0000000000000000)
+  0x0020  20    Image Name
+  0x0034  4     Unknown (0x00000000)
+  0x0038  4     Manufacturer ID
+  0x003C  2     Cartridge ID
+  0x003E  2     Country Code
+  0x0040  4032  Boot Code
+		</pre></td>
+	</tr>
+</tbody></table>
+
+<b>0x0020 - Image Name, Ascii, max. 20 characters</b><br>
+Space for the game title. Padded with 0x00 or spaces (0x20).<br>
+<br>
+
+<b>0x003E - Country Code, 2 characters</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+	<tbody><tr>
+		<td><pre>  Value  Expl.
+  0x3700 Beta ('7')
+  0x4100 ??? ('A')
+  0x4400 Germany ('D')
+  0x4500 USA ('E')
+  0x4600 French ('F')
+  0x4900 Italian ('I')
+  0x4A00 Japan ('J')
+  0x5000 Europe ('P')
+  0x5300 Spanish ('S')
+  0x5500 Australia ('U')
+  0x5800 PAL ('X')
+  0x5900 PAL ('Y')
+		</pre></td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<!-- CPU Register Set -->
+<table width="100%">
+	<tbody><tr bgcolor="#cccccc">
+		<td>
+		<a name="cpuregisterset"></a><font size="+2">&nbsp;CPU Register Set</font>
+		</td>
+	</tr>
+</tbody></table><br>
+
+The R4300i CPU provides sixty-four 64-bit wide
+registers. Thirty-two of these registers, referred to as
+General Purpose Register (GPRs), are reserved for integer
+operations while the other thirty-two register, referred to as
+Floating Point General Purpose Register (FGRs), are
+reserved for floating point operations.<br><br>
+<b>General Purpose Registers (GPRs)</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+	<tbody><tr>
+		<td><pre>  Register     Name
+  r0           r0
+  r1           at
+  r2           v0
+  r3           v1
+  r4           a0
+  r5           a1
+  r6           a2
+  r7           a3
+  r8           t0
+  r9           t1
+  r10          t2
+  r11          t3
+  r12          t4
+  r13          t5
+  r14          t6
+  r15          t7
+  r16          s0
+  r17          s1
+  r18          s2
+  r19          s3
+  r20          s4
+  r21          s5
+  r22          s6
+  r23          s7
+  r24          t8
+  r25          t9
+  r26          k0
+  r27          k1
+  r28          gp
+  r29          sp
+  r30          s8
+  r31          ra
+		</pre></td>
+	</tr>
+</tbody></table>
+
+<b>R0 Register (R0)</b><br>
+R0 is hardwired to a value of zero, and can be used as the target 
+register for any instruction whose result is to be discarded. R0 can 
+also be used as a source when a zero value is needed.<br><br>
+
+<b>R29 Register (SP)</b><br>
+R29 is generally used as the stack pointer, but it can be used for other thing, too.<br><br>
+
+<b>R31 Register (RA)</b><br>
+R31 is the link register used by Jump and Link instructions. It should not be used by other instructions.<br><br>
+
+<b>FP General Purpose Registers (FGRs)</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+	<tbody><tr>
+		<td><pre>  Register     Name
+  FGR0         f0
+  FGR1         f1
+  FGR2         f2
+  FGR3         f3
+  FGR4         f4
+  FGR5         f5
+  FGR6         f6
+  FGR7         f7
+  FGR8         f8
+  FGR9         f9
+  FGR10        f10
+  FGR11        f11
+  FGR12        f12
+  FGR13        f13
+  FGR14        f14
+  FGR15        f15
+  FGR16        f16
+  FGR17        f17
+  FGR18        f18
+  FGR19        f19
+  FGR20        f20
+  FGR21        f21
+  FGR22        f22
+  FGR23        f23
+  FGR24        f24
+  FGR25        f25
+  FGR26        f26
+  FGR27        f27
+  FGR28        f28
+  FGR29        f29
+  FGR30        f30
+  FGR31        f31
+		</pre></td>
+	</tr>
+</tbody></table>
+
+The width of these registers depends on the mode of
+operation. In 32-bit mode, they are treated as 32 bits wide.
+In 64-bit mode, they are treated as 64 bits wide.<br><br>
+
+The R4300i also contains six special registers: the
+program counter (PC), multiply/divide result Hi and Lo,
+Load/Link (LL) bit, and floating point Implementation and
+Control registers FCR0 and FCR31. The
+program counter register contains the address of the
+current instruction. The multiply/divide registers store the
+result of integer multiply operations and the quotient and
+remainder of integer divide operations. The load/link bit is
+dedicated for load-link and store-conditional instructions
+which can be used to perform SYNC operations. The two
+floating point control registers, FCR0 and FCR31, provide
+the implementation/revision information and
+control/status of the floating point coprocessor (CP1).<br><br>
+
+<b>Special Registers</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+	<tbody><tr>
+		<td><pre>  Register Size  Name
+  -------------------------------------------------
+  Program Counter:
+  PC        64   Program Counter
+
+  Multiply/Divide Registers:
+  MultHI    64   MultHI
+  MultLO    64   MultLO
+
+  Floating Point:
+  FCR0      32   Implementation/Revision Information
+  FCR31     32   Control/Status
+
+  Load/Link Bit:
+  LLBit     1    Load/Link Bit
+		</pre></td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<!-- MIPS Instruction Set -->
+<table width="100%">
+	<tbody><tr bgcolor="#cccccc">
+		<td>
+		<a name="mipsinstructionset"></a><font size="+2">&nbsp;MIPS Instruction Set</font>
+		</td>
+	</tr>
+</tbody></table><br>
+
+<b>Summary</b><br>
+<a href="#mipsinstructionsummary">MIPS Instruction Summary</a><br>
+
+<br>
+<br>
+
+<!-- MIPS Instruction Summary -->
+<table width="100%">
+	<tbody><tr bgcolor="#cccccc">
+		<td>
+		<a name="mipsinstructionsummary"></a><font size="+2">&nbsp;MIPS Instruction Summary</font>
+		</td>
+	</tr>
+</tbody></table><br>
+
+<b>Arithmetic Operations</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+	<tbody><tr>
+		<td><pre>  Instruction        Bit Format Expl.
+  ADD    Rd,Rs,Rt     32  R   Rd=Rs+Rt
+  ADDI   Rt,Rs,Imm    32  I   Rt=Rs+nn
+  ADDIU  Rt,Rs,UImm   32  I   Rt=Rs+nn
+  ADDU   Rd,Rs,URt    32  R   Rd=Rs+Rt
+  AND    Rd,Rs,Rt     --  R   Rd=Rs AND Rt
+  ANDI   Rt,Rs,Imm    --  I   Rt=Rs AND nn
+  DADD   Rd,Rs,Rt     64  R   Rd=Rs+Rt
+  DADDI  Rt,Rs,Imm    64  I   Rt=Rs+nn
+  DADDIU Rt,Rs,UImm   64  I   Rt=Rs+nn
+  DADDU  Rd,Rs,Rt     64  R   Rd=Rs+Rt
+  DDIV   Rs,Rt        64      LO=rs/rt, HI=rs%rt
+  DDIVU  Rs,URt       64      LO=rs/rt, HI=rs%rt
+		</pre></td>
+	</tr>
+</tbody></table>
+
+<b>MIPS Binary Opcode Format</b><br>
+<table cellspacing="0" cellpadding="0" border="0">
+	<tbody><tr>
+		<td><pre> Type|31__26|25_21|20_16|15_11|10__6|5____0|
+ _I__|__Op__|_Rs__|_Rt__|____Immediate_____|Immediate
+ _J__|__Op__|____________Target____________|Jump
+ _R__|__Op__|_Rs__|_Rt__|_Rd__|_Sa__|_Func_|Register
+		</pre></td>
+	</tr>
+</tbody></table>
+
+<br>
+
+<table width="100%">
+	<tbody><tr bgcolor="#cccccc">
+		<td>
+			<a name="aboutthisdocument"></a>
+			<font size="+2">&nbsp;About this Document</font>
+		</td>
+	</tr>
+</tbody></table><br>
+
+<b>About</b><br>
+N64TEK written 2007 by Julian Brehmer.<br>
+<br>
+
+<b>Sources</b><br>
+http://www.answers.com/topic/nintendo-64<br>
+<br>
+
+
+</body></html>
