@@ -1,0 +1,63 @@
+* What is it?
+Used to transfer data from the cart/disk drive to RDRAM. ONLY.
+
+* Doing the transfer
+1. Wait for previous dma transfer to finish (see next explanation)
+2. Write the physical dram address of the dma transfer to PI_DRAM_ADDR_REG
+    NOTE: To convert from a virtual address to physical, simply AND the address with 0x1fffffff.
+3. Write the physical cart address to PI_CART_ADDR_REG.
+4. Write the length-1 of the dma transfer to PI_WR_LEN_REG
+    this is from cart->rdram change this to RD   ^  for the other way
+    also note you must write a 0x2 to PI_STATUS_REG in order to write to
+    the cart space (0xb0000000)
+NOTE: The cart addr must be 2 byte aligned, and the rdram addres must 8-byte aligned. Once again make sure you write back the cache lines and
+invalidate the cache lines if needed, or you will run into trouble.
+
+* Waiting for the transfer to complete
+1. Read PI_STATUS_REG then AND it with 0x3, if its true... then wait until it is not true.
+
+* PI Registers
+PI_BASE_REG - 0x04600000
+
+0x0460 0000 to 0x0460 0003  PI_DRAM_ADDR_REG
+            PI DRAM address
+    (RW): [23:0] starting RDRAM address
+0x0460 0004 to 0x0460 0007  PI_CART_ADDR_REG
+            PI pbus (cartridge) address
+    (RW): [31:0] starting AD16 address
+0x0460 0008 to 0x0460 000B  PI_RD_LEN_REG
+            PI read length
+    (RW): [23:0] read data length
+0x0460 000C to 0x0460 000F  PI_WR_LEN_REG
+            PI write length
+    (RW): [23:0] write data length
+0x0460 0010 to 0x0460 0013 PI_STATUS_REG
+            PI status
+    (R): [0] DMA busy             (W): [0] reset controller
+            [1] IO busy                       (and abort current op)
+            [2] error                     [1] clear intr
+0x0460 0014 to 0x0460 0017  PI_BSD_DOM1_LAT_REG or PI_DOMAIN1_REG
+            PI dom1 latency
+    (RW): [7:0] domain 1 device latency
+0x0460 0018 to 0x0460 001B  PI_BSD_DOM1_PWD_REG
+            PI dom1 pulse width
+    (RW): [7:0] domain 1 device R/W strobe pulse width
+0x0460 001C to 0x0460 001F  PI_BSD_DOM1_PGS_REG
+            PI dom1 page size
+    (RW): [3:0] domain 1 device page size
+0x0460 0020 to 0x0460 0023  PI_BSD_DOM1_RLS_REG
+            PI dom1 release
+    (RW): [1:0] domain 1 device R/W release duration
+0x0460 0024 to 0x0460 0027  PI_BSD_DOM2_LAT_REG or PI_DOMAIN2_REG
+            PI dom2 latency
+    (RW): [7:0] domain 2 device latency
+0x0460 0028 to 0x0460 002B  PI_BSD_DOM2_PWD_REG
+            PI dom2 pulse width
+    (RW): [7:0] domain 2 device R/W strobe pulse width
+0x0460 002C to 0x0460 002F  PI_BSD_DOM2_PGS_REG
+            PI dom2 page size
+    (RW): [3:0] domain 2 device page size
+0x0460 0030 to 0x0460 0033  PI_BSD_DOM2_RLS_REG
+            PI dom2 release
+    (RW): [1:0] domain 2 device R/W release duration
+0x0460 0034 to 0x046F FFFF  Unused
