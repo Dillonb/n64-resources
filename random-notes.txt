@@ -1,2 +1,14 @@
 Another fun one that wasn't documented but caused me a lot of time to figure out: the RSP can do unaligned reads, whereas the CPU cannot
 The manual just says "you'll get SOMETHING back, but it may not be what you want" -- spoiler: you get back the correct result apparently, because tons of microcode does it
+
+Ways to disable the screen:
+
+- Set VI_CONTROL depth bits to zero
+- Set width/height to zero
+
+
+
+you gotta checksum the first 4k of the rom to figure out which CIC seed to put in for the pif to compute the right checksum compare value by the way
+code is in ares/mia/cartridge/nintendo-64.cpp
+alternately, detect and break the cart checksum function in the pif rom heh
+
