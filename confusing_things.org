@@ -2,6 +2,7 @@
 - The cache in general
 - The CACHE instruction
 - The 5-stage pipeline
+- The RDRAM/RDRAM Interface registers
 * The CPU always runs in Kernel Mode.
 - registers are always 64 bit
 - 64 bit mips instructions are always available
