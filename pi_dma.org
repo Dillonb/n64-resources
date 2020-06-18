@@ -17,6 +17,7 @@ invalidate the cache lines if needed, or you will run into trouble.
 1. Read PI_STATUS_REG then AND it with 0x3, if its true... then wait until it is not true.
 
 * PI Registers
+#+BEGIN_SRC
 PI_BASE_REG - 0x04600000
 
 0x0460 0000 to 0x0460 0003  PI_DRAM_ADDR_REG
@@ -61,3 +62,5 @@ PI_BASE_REG - 0x04600000
             PI dom2 release
     (RW): [1:0] domain 2 device R/W release duration
 0x0460 0034 to 0x046F FFFF  Unused
+
+#+END_SRC
