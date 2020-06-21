@@ -20,3 +20,22 @@
 - TODO
 *** KSEG3 (0xE0000000 - 0xFFFFFFFF)
 - TODO
+* Floating point registers
+In hardware, there are 32 of them. They are 64 bits wide.
+
+They are called FGRXX in hardware, from 0 to 31.
+
+When accessed through software, they are called FPRXX.
+
+There is a bit in the status register, FR.
+
+** When FR is off
+The upper 32 bits of each FGR (FGR = hardware, remember) register become inaccessible.
+
+The odd numbered FPRs become inaccessible (UNDEFINED BEHAVIOR, not an exception) and the even numbers become "virtual" - i.e,
+
+- FPR0 is made up of <low 32bits of FGR1><low 32bits of FGR0>
+- FPR2 is made up of <low 32bits of FGR3><low 32bits of FGR2>
+- etc
+** When FR is on
+All 32 64 bit registers are fully accessible, including  their upper bits.
