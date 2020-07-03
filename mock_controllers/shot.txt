@@ -1,0 +1,6 @@
+The left 2 "blocks" are the data sent to the PIF.
+The Right 2 "blocks are the data received from the PIF.
+The first line is a Controller connected and returning joystick in neutral position and no button presses.
+The second Line is "No Controller Connected"
+Line 3 is the same as line 1
+Line 4 is something else, maybe a VRU.
