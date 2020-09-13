@@ -1,0 +1,18 @@
+The first triangle in Super Mario 64 (NTSC) should be:
+
+0x00227160: tri_tex_shade_z
+
+- lft: true
+
+- yl: 120.75(0x01e3)
+- ym: 120.25(0x01e1)
+- yh: 120.25(0x01e1)
+
+- xl: 160.750000(0x00a0c000)
+- dxldy: 0.000000(0x00000000)
+
+- xm: 160.250031(0x00a04002)
+- dxmdy: 0.999985(0x0000ffff)
+
+- xh: 160.375031(0x00a06002)
+- dxhdy: 0.499985(0x00007fff)
