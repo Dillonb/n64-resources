@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html class="client-js" dir="ltr" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>SI Registers Detailed - en64 wiki</title>
+<script src="SI%20Registers%20Detailed%20-%20en64%20wiki_files/osd.js"></script><script src="SI%20Registers%20Detailed%20-%20en64%20wiki_files/cookie.js"></script><script src="SI%20Registers%20Detailed%20-%20en64%20wiki_files/show_ads_impl_fy2019.js" id="google_shimpl"></script><script type="text/javascript" async="" defer="defer" src="SI%20Registers%20Detailed%20-%20en64%20wiki_files/piwik.js"></script><script>document.documentElement.className="client-js";RLCONF={"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"SI_Registers_Detailed","wgTitle":"SI Registers Detailed","wgCurRevisionId":527,"wgRevisionId":527,"wgArticleId":95,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"SI_Registers_Detailed","wgRelevantArticleId":95,"wgRequestId":"bf3a59318b7a46568e5fef7e","wgCSPNonce":!1,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,
+"wgRestrictionEdit":["sysop"],"wgRestrictionMove":["sysop"],"wgMFDisplayWikibaseDescriptions":{"search":!1,"nearby":!1,"watchlist":!1,"tagline":!1},"wgSmjSize":110,"wgSmjUseChem":!0,"wgSmjShowMathMenu":!1,"wgSmjInlineMath":[["[math]","[/math]"]]};RLSTATE={"ext.globalCssJs.user.styles":"ready","ext.globalCssJs.site.styles":"ready","site.styles":"ready","noscript":"ready","user.styles":"ready","ext.globalCssJs.user":"ready","user":"ready","user.options":"ready","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.toc.styles":"ready","ext.ShoutWikiAds.vector.skyscraper":"ready","ext.ShoutWikiAds.vector.button":"ready","skins.vector.styles.responsive":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"};RLPAGEMODULES=["ext.SmjLocal","site","mediawiki.page.startup","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","ext.globalCssJs.site","ext.piwik.optout","ext.problemReports",
+"skins.vector.js"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.tokens@tffin",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});});</script>
+<link rel="stylesheet" href="SI%20Registers%20Detailed%20-%20en64%20wiki_files/load_002.css">
+<script async="" src="SI%20Registers%20Detailed%20-%20en64%20wiki_files/load.php"></script>
+<style>
+.ui-helper-hidden{display:none}.ui-helper-hidden-accessible{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.ui-helper-reset{margin:0;padding:0;border:0;outline:0;line-height:1.3;text-decoration:none;font-size:100%;list-style:none}.ui-helper-clearfix:before,.ui-helper-clearfix:after{content:"";display:table;border-collapse:collapse}.ui-helper-clearfix:after{clear:both}.ui-helper-clearfix{zoom:1}.ui-helper-zfix{width:100%;height:100%;top:0;left:0;position:absolute;opacity:0;filter:Alpha(Opacity=0)} .ui-state-disabled{cursor:default !important}  .ui-icon{display:block;text-indent:-99999px;overflow:hidden;background-repeat:no-repeat}  .ui-widget-overlay{position:absolute;top:0;left:0;width:100%;height:100%} .ui-accordion .ui-accordion-header{display:block;cursor:pointer;position:relative;margin-top:2px;padding:.5em .5em .5em .7em;zoom:1}.ui-accordion .ui-accordion-icons{padding-left:2.2em}.ui-accordion .ui-accordion-noicons{padding-left:.7em}.ui-accordion .ui-accordion-icons .ui-accordion-icons{padding-left:2.2em}.ui-accordion .ui-accordion-header .ui-accordion-header-icon{position:absolute;left:.5em;top:50%;margin-top:-8px}.ui-accordion .ui-accordion-content{padding:1em 2.2em;border-top:0;overflow:auto;zoom:1} .ui-autocomplete{position:absolute;top:0;left:0;cursor:default} * html .ui-autocomplete{width:1px}  .ui-button{display:inline-block;position:relative;padding:0;margin-right:.1em;cursor:pointer;text-align:center;zoom:1;overflow:visible} .ui-button,.ui-button:link,.ui-button:visited,.ui-button:hover,.ui-button:active{text-decoration:none}.ui-button-icon-only{width:2.2em} button.ui-button-icon-only{width:2.4em} .ui-button-icons-only{width:3.4em}button.ui-button-icons-only{width:3.7em} .ui-button .ui-button-text{display:block;line-height:1.4}.ui-button-text-only .ui-button-text{padding:.4em 1em}.ui-button-icon-only .ui-button-text,.ui-button-icons-only .ui-button-text{padding:.4em;text-indent:-9999999px}.ui-button-text-icon-primary .ui-button-text,.ui-button-text-icons .ui-button-text{padding:.4em 1em .4em 2.1em}.ui-button-text-icon-secondary .ui-button-text,.ui-button-text-icons .ui-button-text{padding:.4em 2.1em .4em 1em}.ui-button-text-icons .ui-button-text{padding-left:2.1em;padding-right:2.1em} input.ui-button{padding:.4em 1em} .ui-button-icon-only .ui-icon,.ui-button-text-icon-primary .ui-icon,.ui-button-text-icon-secondary .ui-icon,.ui-button-text-icons .ui-icon,.ui-button-icons-only .ui-icon{position:absolute;top:50%;margin-top:-8px}.ui-button-icon-only .ui-icon{left:50%;margin-left:-8px}.ui-button-text-icon-primary .ui-button-icon-primary,.ui-button-text-icons .ui-button-icon-primary,.ui-button-icons-only .ui-button-icon-primary{left:.5em}.ui-button-text-icon-secondary .ui-button-icon-secondary,.ui-button-text-icons .ui-button-icon-secondary,.ui-button-icons-only .ui-button-icon-secondary{right:.5em}.ui-button-text-icons .ui-button-icon-secondary,.ui-button-icons-only .ui-button-icon-secondary{right:.5em} .ui-buttonset{margin-right:7px}.ui-buttonset .ui-button{margin-left:0;margin-right:-.3em} button.ui-button::-moz-focus-inner{border:0;padding:0}  .ui-datepicker{width:17em;padding:.2em .2em 0;display:none}.ui-datepicker .ui-datepicker-header{position:relative;padding:.2em 0}.ui-datepicker .ui-datepicker-prev,.ui-datepicker .ui-datepicker-next{position:absolute;top:2px;width:1.8em;height:1.8em}.ui-datepicker .ui-datepicker-prev-hover,.ui-datepicker .ui-datepicker-next-hover{top:1px}.ui-datepicker .ui-datepicker-prev{left:2px}.ui-datepicker .ui-datepicker-next{right:2px}.ui-datepicker .ui-datepicker-prev-hover{left:1px}.ui-datepicker .ui-datepicker-next-hover{right:1px}.ui-datepicker .ui-datepicker-prev span,.ui-datepicker .ui-datepicker-next span{display:block;position:absolute;left:50%;margin-left:-8px;top:50%;margin-top:-8px}.ui-datepicker .ui-datepicker-title{margin:0 2.3em;line-height:1.8em;text-align:center}.ui-datepicker .ui-datepicker-title select{font-size:1em;margin:1px 0}.ui-datepicker select.ui-datepicker-month-year{width:100%}.ui-datepicker select.ui-datepicker-month,.ui-datepicker select.ui-datepicker-year{width:49%}.ui-datepicker table{width:100%;font-size:.9em;border-collapse:collapse;margin:0 0 .4em}.ui-datepicker th{padding:.7em .3em;text-align:center;font-weight:bold;border:0}.ui-datepicker td{border:0;padding:1px}.ui-datepicker td span,.ui-datepicker td a{display:block;padding:.2em;text-align:right;text-decoration:none}.ui-datepicker .ui-datepicker-buttonpane{background-image:none;margin:.7em 0 0 0;padding:0 .2em;border-left:0;border-right:0;border-bottom:0}.ui-datepicker .ui-datepicker-buttonpane button{float:right;margin:.5em .2em .4em;cursor:pointer;padding:.2em .6em .3em .6em;width:auto;overflow:visible}.ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current{float:left} .ui-datepicker.ui-datepicker-multi{width:auto}.ui-datepicker-multi .ui-datepicker-group{float:left}.ui-datepicker-multi .ui-datepicker-group table{width:95%;margin:0 auto .4em}.ui-datepicker-multi-2 .ui-datepicker-group{width:50%}.ui-datepicker-multi-3 .ui-datepicker-group{width:33.3%}.ui-datepicker-multi-4 .ui-datepicker-group{width:25%}.ui-datepicker-multi .ui-datepicker-group-last .ui-datepicker-header{border-left-width:0}.ui-datepicker-multi .ui-datepicker-group-middle .ui-datepicker-header{border-left-width:0}.ui-datepicker-multi .ui-datepicker-buttonpane{clear:left}.ui-datepicker-row-break{clear:both;width:100%;font-size:0em} .ui-datepicker-rtl{direction:rtl}.ui-datepicker-rtl .ui-datepicker-prev{right:2px;left:auto}.ui-datepicker-rtl .ui-datepicker-next{left:2px;right:auto}.ui-datepicker-rtl .ui-datepicker-prev:hover{right:1px;left:auto}.ui-datepicker-rtl .ui-datepicker-next:hover{left:1px;right:auto}.ui-datepicker-rtl .ui-datepicker-buttonpane{clear:right}.ui-datepicker-rtl .ui-datepicker-buttonpane button{float:left}.ui-datepicker-rtl .ui-datepicker-buttonpane button.ui-datepicker-current{float:right}.ui-datepicker-rtl .ui-datepicker-group{float:right}.ui-datepicker-rtl .ui-datepicker-group-last .ui-datepicker-header{border-right-width:0;border-left-width:1px}.ui-datepicker-rtl .ui-datepicker-group-middle .ui-datepicker-header{border-right-width:0;border-left-width:1px} .ui-datepicker-cover{position:absolute; z-index:-1; filter:mask(); top:-4px; left:-4px; width:200px; height:200px; } .ui-dialog{position:absolute;top:0;left:0;padding:.2em;width:300px;overflow:hidden}.ui-dialog .ui-dialog-titlebar{padding:.4em 1em;position:relative}.ui-dialog .ui-dialog-title{float:left;margin:.1em 16px .1em 0}.ui-dialog .ui-dialog-titlebar-close{position:absolute;right:.3em;top:50%;width:19px;margin:-10px 0 0 0;padding:1px;height:18px}.ui-dialog .ui-dialog-titlebar-close span{display:block;margin:1px}.ui-dialog .ui-dialog-titlebar-close:hover,.ui-dialog .ui-dialog-titlebar-close:focus{padding:0}.ui-dialog .ui-dialog-content{position:relative;border:0;padding:.5em 1em;background:none;overflow:auto;zoom:1}.ui-dialog .ui-dialog-buttonpane{text-align:left;border-width:1px 0 0 0;background-image:none;margin:.5em 0 0 0;padding:.3em 1em .5em .4em}.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset{float:right}.ui-dialog .ui-dialog-buttonpane button{margin:.5em .4em .5em 0;cursor:pointer}.ui-dialog .ui-resizable-se{width:14px;height:14px;right:3px;bottom:3px}.ui-draggable .ui-dialog-titlebar{cursor:move} .ui-menu{list-style:none;padding:2px;margin:0;display:block;outline:none}.ui-menu .ui-menu{margin-top:-3px;position:absolute}.ui-menu .ui-menu-item{margin:0;padding:0;zoom:1;width:100%}.ui-menu .ui-menu-divider{margin:5px -2px 5px -2px;height:0;font-size:0;line-height:0;border-width:1px 0 0 0}.ui-menu .ui-menu-item a{text-decoration:none;display:block;padding:2px .4em;line-height:1.5;zoom:1;font-weight:normal}.ui-menu .ui-menu-item a.ui-state-focus,.ui-menu .ui-menu-item a.ui-state-active{font-weight:normal;margin:-1px}.ui-menu .ui-state-disabled{font-weight:normal;margin:.4em 0 .2em;line-height:1.5}.ui-menu .ui-state-disabled a{cursor:default} .ui-menu-icons{position:relative}.ui-menu-icons .ui-menu-item a{position:relative;padding-left:2em} .ui-menu .ui-icon{position:absolute;top:.2em;left:.2em} .ui-menu .ui-menu-icon{position:static;float:right} .ui-progressbar{height:2em;text-align:left;overflow:hidden}.ui-progressbar .ui-progressbar-value{margin:-1px;height:100%} .ui-resizable{position:relative}.ui-resizable-handle{position:absolute;font-size:0.1px;display:block}.ui-resizable-disabled .ui-resizable-handle,.ui-resizable-autohide .ui-resizable-handle{display:none}.ui-resizable-n{cursor:n-resize;height:7px;width:100%;top:-5px;left:0}.ui-resizable-s{cursor:s-resize;height:7px;width:100%;bottom:-5px;left:0}.ui-resizable-e{cursor:e-resize;width:7px;right:-5px;top:0;height:100%}.ui-resizable-w{cursor:w-resize;width:7px;left:-5px;top:0;height:100%}.ui-resizable-se{cursor:se-resize;width:12px;height:12px;right:1px;bottom:1px}.ui-resizable-sw{cursor:sw-resize;width:9px;height:9px;left:-5px;bottom:-5px}.ui-resizable-nw{cursor:nw-resize;width:9px;height:9px;left:-5px;top:-5px}.ui-resizable-ne{cursor:ne-resize;width:9px;height:9px;right:-5px;top:-5px} .ui-selectable-helper{position:absolute;z-index:100;border:1px dotted black} .ui-slider{position:relative;text-align:left}.ui-slider .ui-slider-handle{position:absolute;z-index:2;width:1.2em;height:1.2em;cursor:default}.ui-slider .ui-slider-range{position:absolute;z-index:1;font-size:.7em;display:block;border:0;background-position:0 0}.ui-slider-horizontal{height:.8em}.ui-slider-horizontal .ui-slider-handle{top:-.3em;margin-left:-.6em}.ui-slider-horizontal .ui-slider-range{top:0;height:100%}.ui-slider-horizontal .ui-slider-range-min{left:0}.ui-slider-horizontal .ui-slider-range-max{right:0}.ui-slider-vertical{width:.8em;height:100px}.ui-slider-vertical .ui-slider-handle{left:-.3em;margin-left:0;margin-bottom:-.6em}.ui-slider-vertical .ui-slider-range{left:0;width:100%}.ui-slider-vertical .ui-slider-range-min{bottom:0}.ui-slider-vertical .ui-slider-range-max{top:0} .ui-tabs{position:relative;padding:.2em;zoom:1} .ui-tabs .ui-tabs-nav{margin:0;padding:.2em .2em 0}.ui-tabs .ui-tabs-nav li{list-style:none;float:left;position:relative;top:0;margin:1px .2em 0 0;border-bottom:0;padding:0;white-space:nowrap}.ui-tabs .ui-tabs-nav li a{float:left;padding:.5em 1em;text-decoration:none}.ui-tabs .ui-tabs-nav li.ui-tabs-active{margin-bottom:-1px;padding-bottom:1px}.ui-tabs .ui-tabs-nav li.ui-tabs-active a,.ui-tabs .ui-tabs-nav li.ui-state-disabled a,.ui-tabs .ui-tabs-nav li.ui-tabs-loading a{cursor:text}.ui-tabs .ui-tabs-nav li a,.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-active a{cursor:pointer} .ui-tabs .ui-tabs-panel{display:block;border-width:0;padding:1em 1.4em;background:none} .ui-tooltip{padding:8px;position:absolute;z-index:9999;max-width:300px;-webkit-box-shadow:0 0 5px #aaa;box-shadow:0 0 5px #aaa} * html .ui-tooltip{background-image:none}body .ui-tooltip{border-width:2px}  .ui-widget{font-family:Verdana,Arial,sans-serif;font-size:1.1em}.ui-widget .ui-widget{font-size:1em}.ui-widget input,.ui-widget select,.ui-widget textarea,.ui-widget button{font-family:Verdana,Arial,sans-serif;font-size:1em}.ui-widget-content{border:1px solid #aaaaaa;background:#ffffff url(/w/resources/lib/jquery.ui/themes/smoothness/images/ui-bg_flat_75_ffffff_40x100.png?81e0f) 50% 50% repeat-x;color:#222222}.ui-widget-header{border:1px solid #aaaaaa;background:#cccccc url(/w/resources/lib/jquery.ui/themes/smoothness/images/ui-bg_highlight-soft_75_cccccc_1x100.png?52261) 50% 50% repeat-x;color:#222222;font-weight:bold} .ui-state-default,.ui-widget-content .ui-state-default,.ui-widget-header .ui-state-default{border:1px solid #d3d3d3;background:#e6e6e6 url(/w/resources/lib/jquery.ui/themes/smoothness/images/ui-bg_glass_75_e6e6e6_1x400.png?944bb) 50% 50% repeat-x;font-weight:normal;color:#555555}.ui-state-default a,.ui-state-default a:link,.ui-state-default a:visited{color:#555555;text-decoration:none}.ui-state-hover,.ui-widget-content .ui-state-hover,.ui-widget-header .ui-state-hover,.ui-state-focus,.ui-widget-content .ui-state-focus,.ui-widget-header .ui-state-focus{border:1px solid #999999;background:#dadada url(/w/resources/lib/jquery.ui/themes/smoothness/images/ui-bg_glass_75_dadada_1x400.png?78379) 50% 50% repeat-x;font-weight:normal;color:#212121}.ui-state-hover a,.ui-state-hover a:hover,.ui-state-hover a:link,.ui-state-hover a:visited{color:#212121;text-decoration:none}.ui-state-active,.ui-widget-content .ui-state-active,.ui-widget-header .ui-state-active{border:1px solid #aaaaaa;background:#ffffff url(/w/resources/lib/jquery.ui/themes/smoothness/images/ui-bg_glass_65_ffffff_1x400.png?bd8a3) 50% 50% repeat-x;font-weight:normal;color:#212121}.ui-state-active a,.ui-state-active a:link,.ui-state-active a:visited{color:#212121;text-decoration:none} .ui-state-highlight,.ui-widget-content .ui-state-highlight,.ui-widget-header .ui-state-highlight{border:1px solid #fcefa1;background:#fbf9ee url(/w/resources/lib/jquery.ui/themes/smoothness/images/ui-bg_glass_55_fbf9ee_1x400.png?f7ccf) 50% 50% repeat-x;color:#363636}.ui-state-highlight a,.ui-widget-content .ui-state-highlight a,.ui-widget-header .ui-state-highlight a{color:#363636}.ui-state-error,.ui-widget-content .ui-state-error,.ui-widget-header .ui-state-error{border:1px solid #cd0a0a;background:#fef1ec url(/w/resources/lib/jquery.ui/themes/smoothness/images/ui-bg_glass_95_fef1ec_1x400.png?f9aa8) 50% 50% repeat-x;color:#cd0a0a}.ui-state-error a,.ui-widget-content .ui-state-error a,.ui-widget-header .ui-state-error a{color:#cd0a0a}.ui-state-error-text,.ui-widget-content .ui-state-error-text,.ui-widget-header .ui-state-error-text{color:#cd0a0a}.ui-priority-primary,.ui-widget-content .ui-priority-primary,.ui-widget-header .ui-priority-primary{font-weight:bold}.ui-priority-secondary,.ui-widget-content .ui-priority-secondary,.ui-widget-header .ui-priority-secondary{opacity:.7;filter:Alpha(Opacity=70);font-weight:normal}.ui-state-disabled,.ui-widget-content .ui-state-disabled,.ui-widget-header .ui-state-disabled{opacity:.35;filter:Alpha(Opacity=35);background-image:none}.ui-state-disabled .ui-icon{filter:Alpha(Opacity=35)}   .ui-icon{width:16px;height:16px;background-image:url(/w/resources/lib/jquery.ui/themes/smoothness/images/ui-icons_222222_256x240.png?a1b38)}.ui-widget-content .ui-icon{background-image:url(/w/resources/lib/jquery.ui/themes/smoothness/images/ui-icons_222222_256x240.png?a1b38)}.ui-widget-header .ui-icon{background-image:url(/w/resources/lib/jquery.ui/themes/smoothness/images/ui-icons_222222_256x240.png?a1b38)}.ui-state-default .ui-icon{background-image:url(/w/resources/lib/jquery.ui/themes/smoothness/images/ui-icons_888888_256x240.png?302ae)}.ui-state-hover .ui-icon,.ui-state-focus .ui-icon{background-image:url(/w/resources/lib/jquery.ui/themes/smoothness/images/ui-icons_454545_256x240.png?6b29e)}.ui-state-active .ui-icon{background-image:url(/w/resources/lib/jquery.ui/themes/smoothness/images/ui-icons_454545_256x240.png?6b29e)}.ui-state-highlight .ui-icon{background-image:url(/w/resources/lib/jquery.ui/themes/smoothness/images/ui-icons_2e83ff_256x240.png?764c3)}.ui-state-error .ui-icon,.ui-state-error-text .ui-icon{background-image:url(/w/resources/lib/jquery.ui/themes/smoothness/images/ui-icons_cd0a0a_256x240.png?5c785)} .ui-icon-carat-1-n{background-position:0 0}.ui-icon-carat-1-ne{background-position:-16px 0}.ui-icon-carat-1-e{background-position:-32px 0}.ui-icon-carat-1-se{background-position:-48px 0}.ui-icon-carat-1-s{background-position:-64px 0}.ui-icon-carat-1-sw{background-position:-80px 0}.ui-icon-carat-1-w{background-position:-96px 0}.ui-icon-carat-1-nw{background-position:-112px 0}.ui-icon-carat-2-n-s{background-position:-128px 0}.ui-icon-carat-2-e-w{background-position:-144px 0}.ui-icon-triangle-1-n{background-position:0 -16px}.ui-icon-triangle-1-ne{background-position:-16px -16px}.ui-icon-triangle-1-e{background-position:-32px -16px}.ui-icon-triangle-1-se{background-position:-48px -16px}.ui-icon-triangle-1-s{background-position:-64px -16px}.ui-icon-triangle-1-sw{background-position:-80px -16px}.ui-icon-triangle-1-w{background-position:-96px -16px}.ui-icon-triangle-1-nw{background-position:-112px -16px}.ui-icon-triangle-2-n-s{background-position:-128px -16px}.ui-icon-triangle-2-e-w{background-position:-144px -16px}.ui-icon-arrow-1-n{background-position:0 -32px}.ui-icon-arrow-1-ne{background-position:-16px -32px}.ui-icon-arrow-1-e{background-position:-32px -32px}.ui-icon-arrow-1-se{background-position:-48px -32px}.ui-icon-arrow-1-s{background-position:-64px -32px}.ui-icon-arrow-1-sw{background-position:-80px -32px}.ui-icon-arrow-1-w{background-position:-96px -32px}.ui-icon-arrow-1-nw{background-position:-112px -32px}.ui-icon-arrow-2-n-s{background-position:-128px -32px}.ui-icon-arrow-2-ne-sw{background-position:-144px -32px}.ui-icon-arrow-2-e-w{background-position:-160px -32px}.ui-icon-arrow-2-se-nw{background-position:-176px -32px}.ui-icon-arrowstop-1-n{background-position:-192px -32px}.ui-icon-arrowstop-1-e{background-position:-208px -32px}.ui-icon-arrowstop-1-s{background-position:-224px -32px}.ui-icon-arrowstop-1-w{background-position:-240px -32px}.ui-icon-arrowthick-1-n{background-position:0 -48px}.ui-icon-arrowthick-1-ne{background-position:-16px -48px}.ui-icon-arrowthick-1-e{background-position:-32px -48px}.ui-icon-arrowthick-1-se{background-position:-48px -48px}.ui-icon-arrowthick-1-s{background-position:-64px -48px}.ui-icon-arrowthick-1-sw{background-position:-80px -48px}.ui-icon-arrowthick-1-w{background-position:-96px -48px}.ui-icon-arrowthick-1-nw{background-position:-112px -48px}.ui-icon-arrowthick-2-n-s{background-position:-128px -48px}.ui-icon-arrowthick-2-ne-sw{background-position:-144px -48px}.ui-icon-arrowthick-2-e-w{background-position:-160px -48px}.ui-icon-arrowthick-2-se-nw{background-position:-176px -48px}.ui-icon-arrowthickstop-1-n{background-position:-192px -48px}.ui-icon-arrowthickstop-1-e{background-position:-208px -48px}.ui-icon-arrowthickstop-1-s{background-position:-224px -48px}.ui-icon-arrowthickstop-1-w{background-position:-240px -48px}.ui-icon-arrowreturnthick-1-w{background-position:0 -64px}.ui-icon-arrowreturnthick-1-n{background-position:-16px -64px}.ui-icon-arrowreturnthick-1-e{background-position:-32px -64px}.ui-icon-arrowreturnthick-1-s{background-position:-48px -64px}.ui-icon-arrowreturn-1-w{background-position:-64px -64px}.ui-icon-arrowreturn-1-n{background-position:-80px -64px}.ui-icon-arrowreturn-1-e{background-position:-96px -64px}.ui-icon-arrowreturn-1-s{background-position:-112px -64px}.ui-icon-arrowrefresh-1-w{background-position:-128px -64px}.ui-icon-arrowrefresh-1-n{background-position:-144px -64px}.ui-icon-arrowrefresh-1-e{background-position:-160px -64px}.ui-icon-arrowrefresh-1-s{background-position:-176px -64px}.ui-icon-arrow-4{background-position:0 -80px}.ui-icon-arrow-4-diag{background-position:-16px -80px}.ui-icon-extlink{background-position:-32px -80px}.ui-icon-newwin{background-position:-48px -80px}.ui-icon-refresh{background-position:-64px -80px}.ui-icon-shuffle{background-position:-80px -80px}.ui-icon-transfer-e-w{background-position:-96px -80px}.ui-icon-transferthick-e-w{background-position:-112px -80px}.ui-icon-folder-collapsed{background-position:0 -96px}.ui-icon-folder-open{background-position:-16px -96px}.ui-icon-document{background-position:-32px -96px}.ui-icon-document-b{background-position:-48px -96px}.ui-icon-note{background-position:-64px -96px}.ui-icon-mail-closed{background-position:-80px -96px}.ui-icon-mail-open{background-position:-96px -96px}.ui-icon-suitcase{background-position:-112px -96px}.ui-icon-comment{background-position:-128px -96px}.ui-icon-person{background-position:-144px -96px}.ui-icon-print{background-position:-160px -96px}.ui-icon-trash{background-position:-176px -96px}.ui-icon-locked{background-position:-192px -96px}.ui-icon-unlocked{background-position:-208px -96px}.ui-icon-bookmark{background-position:-224px -96px}.ui-icon-tag{background-position:-240px -96px}.ui-icon-home{background-position:0 -112px}.ui-icon-flag{background-position:-16px -112px}.ui-icon-calendar{background-position:-32px -112px}.ui-icon-cart{background-position:-48px -112px}.ui-icon-pencil{background-position:-64px -112px}.ui-icon-clock{background-position:-80px -112px}.ui-icon-disk{background-position:-96px -112px}.ui-icon-calculator{background-position:-112px -112px}.ui-icon-zoomin{background-position:-128px -112px}.ui-icon-zoomout{background-position:-144px -112px}.ui-icon-search{background-position:-160px -112px}.ui-icon-wrench{background-position:-176px -112px}.ui-icon-gear{background-position:-192px -112px}.ui-icon-heart{background-position:-208px -112px}.ui-icon-star{background-position:-224px -112px}.ui-icon-link{background-position:-240px -112px}.ui-icon-cancel{background-position:0 -128px}.ui-icon-plus{background-position:-16px -128px}.ui-icon-plusthick{background-position:-32px -128px}.ui-icon-minus{background-position:-48px -128px}.ui-icon-minusthick{background-position:-64px -128px}.ui-icon-close{background-position:-80px -128px}.ui-icon-closethick{background-position:-96px -128px}.ui-icon-key{background-position:-112px -128px}.ui-icon-lightbulb{background-position:-128px -128px}.ui-icon-scissors{background-position:-144px -128px}.ui-icon-clipboard{background-position:-160px -128px}.ui-icon-copy{background-position:-176px -128px}.ui-icon-contact{background-position:-192px -128px}.ui-icon-image{background-position:-208px -128px}.ui-icon-video{background-position:-224px -128px}.ui-icon-script{background-position:-240px -128px}.ui-icon-alert{background-position:0 -144px}.ui-icon-info{background-position:-16px -144px}.ui-icon-notice{background-position:-32px -144px}.ui-icon-help{background-position:-48px -144px}.ui-icon-check{background-position:-64px -144px}.ui-icon-bullet{background-position:-80px -144px}.ui-icon-radio-on{background-position:-96px -144px}.ui-icon-radio-off{background-position:-112px -144px}.ui-icon-pin-w{background-position:-128px -144px}.ui-icon-pin-s{background-position:-144px -144px}.ui-icon-play{background-position:0 -160px}.ui-icon-pause{background-position:-16px -160px}.ui-icon-seek-next{background-position:-32px -160px}.ui-icon-seek-prev{background-position:-48px -160px}.ui-icon-seek-end{background-position:-64px -160px}.ui-icon-seek-start{background-position:-80px -160px} .ui-icon-seek-first{background-position:-80px -160px}.ui-icon-stop{background-position:-96px -160px}.ui-icon-eject{background-position:-112px -160px}.ui-icon-volume-off{background-position:-128px -160px}.ui-icon-volume-on{background-position:-144px -160px}.ui-icon-power{background-position:0 -176px}.ui-icon-signal-diag{background-position:-16px -176px}.ui-icon-signal{background-position:-32px -176px}.ui-icon-battery-0{background-position:-48px -176px}.ui-icon-battery-1{background-position:-64px -176px}.ui-icon-battery-2{background-position:-80px -176px}.ui-icon-battery-3{background-position:-96px -176px}.ui-icon-circle-plus{background-position:0 -192px}.ui-icon-circle-minus{background-position:-16px -192px}.ui-icon-circle-close{background-position:-32px -192px}.ui-icon-circle-triangle-e{background-position:-48px -192px}.ui-icon-circle-triangle-s{background-position:-64px -192px}.ui-icon-circle-triangle-w{background-position:-80px -192px}.ui-icon-circle-triangle-n{background-position:-96px -192px}.ui-icon-circle-arrow-e{background-position:-112px -192px}.ui-icon-circle-arrow-s{background-position:-128px -192px}.ui-icon-circle-arrow-w{background-position:-144px -192px}.ui-icon-circle-arrow-n{background-position:-160px -192px}.ui-icon-circle-zoomin{background-position:-176px -192px}.ui-icon-circle-zoomout{background-position:-192px -192px}.ui-icon-circle-check{background-position:-208px -192px}.ui-icon-circlesmall-plus{background-position:0 -208px}.ui-icon-circlesmall-minus{background-position:-16px -208px}.ui-icon-circlesmall-close{background-position:-32px -208px}.ui-icon-squaresmall-plus{background-position:-48px -208px}.ui-icon-squaresmall-minus{background-position:-64px -208px}.ui-icon-squaresmall-close{background-position:-80px -208px}.ui-icon-grip-dotted-vertical{background-position:0 -224px}.ui-icon-grip-dotted-horizontal{background-position:-16px -224px}.ui-icon-grip-solid-vertical{background-position:-32px -224px}.ui-icon-grip-solid-horizontal{background-position:-48px -224px}.ui-icon-gripsmall-diagonal-se{background-position:-64px -224px}.ui-icon-grip-diagonal-se{background-position:-80px -224px}  .ui-corner-all,.ui-corner-top,.ui-corner-left,.ui-corner-tl{-moz-border-radius-topleft:4px;-webkit-border-top-left-radius:4px;-khtml-border-top-left-radius:4px;border-top-left-radius:4px}.ui-corner-all,.ui-corner-top,.ui-corner-right,.ui-corner-tr{-moz-border-radius-topright:4px;-webkit-border-top-right-radius:4px;-khtml-border-top-right-radius:4px;border-top-right-radius:4px}.ui-corner-all,.ui-corner-bottom,.ui-corner-left,.ui-corner-bl{-moz-border-radius-bottomleft:4px;-webkit-border-bottom-left-radius:4px;-khtml-border-bottom-left-radius:4px;border-bottom-left-radius:4px}.ui-corner-all,.ui-corner-bottom,.ui-corner-right,.ui-corner-br{-moz-border-radius-bottomright:4px;-webkit-border-bottom-right-radius:4px;-khtml-border-bottom-right-radius:4px;border-bottom-right-radius:4px} .ui-widget-overlay{background:#aaaaaa url(/w/resources/lib/jquery.ui/themes/smoothness/images/ui-bg_flat_0_aaaaaa_40x100.png?fda5a) 50% 50% repeat-x;opacity:.3;filter:Alpha(Opacity=30)}.ui-widget-shadow{margin:-8px 0 0 -8px;padding:8px;background:#aaaaaa url(/w/resources/lib/jquery.ui/themes/smoothness/images/ui-bg_flat_0_aaaaaa_40x100.png?fda5a) 50% 50% repeat-x;opacity:.3;filter:Alpha(Opacity=30);-moz-border-radius:8px;-khtml-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:0;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:#fff;cursor:pointer;border:1px solid #a2a9b1;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:#fff;cursor:pointer;border:1px solid #a2a9b1;padding:0;margin:0}.suggestions-result{color:#000;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#2a4b8d;color:#fff}.suggestions-special .special-label{color:#72777d;text-align:left}.suggestions-special .special-query{color:#000;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:#c8ccd1}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:#fff}.highlight{font-weight:bold}
+.mw-notification-area{position:absolute}.mw-notification-area-floating{position:fixed}.mw-notification-area{top:0;right:0; padding:1em;width:20em;line-height:1.35;z-index:10000; overflow:hidden}.mw-notification{padding:0.75em 1.5em;margin-bottom:0.5em;border:solid 1px #ddd;background-color:#fff; cursor:pointer;opacity:0;-webkit-transform:translateX(35px);transform:translateX(35px);-webkit-transition:opacity 0.35s ease-in-out,-webkit-transform 0.35s ease-in-out;transition:opacity 0.35s ease-in-out,transform 0.35s ease-in-out}.mw-notification-visible{opacity:1;-webkit-transform:translateX(0);transform:translateX(0)}.mw-notification-replaced{opacity:0;-webkit-transform:translateY(-35px);transform:translateY(-35px);pointer-events:none}.mw-notification-title{font-weight:bold}.mw-notification.mw-notification-type-warn{border-color:#f5be00; background-color:#ffffe8}.mw-notification.mw-notification-type-error{border-color:#eb3941; background-color:#fff8f8}    .mw-notification-area{font-size:0.8em}.mw-notification-area-layout{top:7em}.mw-notification{border:1px solid #a2a9b1;border-radius:2px;box-shadow:0 2px 2px 0 rgba(0,0,0,0.25)}
+@media print {
+	.mw-notification-area{display:none}}
+@media screen {
+	.tochidden,.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.toctoggle{font-size:94%}}
+@media print {
+	.toc.tochidden,.toctoggle{display:none}}</style><style>
+.ui-dialog{position:absolute;top:0;left:0;padding:.2em;width:300px;overflow:hidden}.ui-dialog .ui-dialog-titlebar{padding:.4em 1em;position:relative}.ui-dialog .ui-dialog-title{float:left;margin:.1em 16px .1em 0}.ui-dialog .ui-dialog-titlebar-close{position:absolute;right:.3em;top:50%;width:19px;margin:-10px 0 0 0;padding:1px;height:18px}.ui-dialog .ui-dialog-titlebar-close span{display:block;margin:1px}.ui-dialog .ui-dialog-titlebar-close:hover,.ui-dialog .ui-dialog-titlebar-close:focus{padding:0}.ui-dialog .ui-dialog-content{position:relative;border:0;padding:.5em 1em;background:none;overflow:auto;zoom:1}.ui-dialog .ui-dialog-buttonpane{text-align:left;border-width:1px 0 0 0;background-image:none;margin:.5em 0 0 0;padding:.3em 1em .5em .4em}.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset{float:right}.ui-dialog .ui-dialog-buttonpane button{margin:.5em .4em .5em 0;cursor:pointer}.ui-dialog .ui-resizable-se{width:14px;height:14px;right:3px;bottom:3px}.ui-draggable .ui-dialog-titlebar{cursor:move} body .ui-dialog .ui-dialog-titlebar-close:hover{text-decoration:none}body .ui-dialog .ui-dialog-content .status-invalid input{border:2px solid red;padding:2px 1px}body .ui-dialog .ui-dialog-titlebar{padding:0.9em 1.4em 0.6em !important}body .ui-dialog .ui-widget-header{background:#f0f0f0 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAkCAAAAABtHw/QAAAAGElEQVR4AWP6wMTA9B8ZI5MIGl0EQUIwAE1qGCLeV4KUAAAAAElFTkSuQmCC) repeat-x scroll 50% 100% !important;background:#f0f0f0 url(//www.shoutwiki.com/w/skins/Vector/skinStyles/jquery.ui/images/titlebar-fade.png?a865b) repeat-x scroll 50% 100% !important!ie} body .ui-dialog .ui-icon-closethick{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAP0lEQVR4AWMAgv9AvBmIef///88AwiA2VAzM8YUy9oMkoHg/VMwXqhqhCE2SF24kQhFCEiRHUAFBKwg6kqA3ATsBNQnCUV+1AAAAAElFTkSuQmCC) no-repeat 50% 50% !important;background:url(//www.shoutwiki.com/w/skins/Vector/skinStyles/jquery.ui/images/close.png?299b8) no-repeat 50% 50% !important!ie}body .ui-dialog .ui-dialog-buttonpane{margin-top:0 !important;padding:0.3em 1.4em 0.5em 1.4em !important}
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:#000;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:#fff}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;text-overflow:ellipsis;white-space:nowrap}</style><style>
+#reportProblemForm a{color:inherit;text-decoration:underline}#reportProblemForm{background-color:#fff;color:#000000; font-size:9pt;   }  #reportProblemForm form{padding:5px 12px 12px 5px}#reportProblemForm a{color:inherit;text-decoration:underline}#reportProblem input[type="text"],#reportProblem textarea,#reportProblem select{padding:2px;margin:7px 0 7px 10px}#reportProblem label.floaty{width:120px;float:left;padding:10px 0;text-align:left;margin:0}#reportProblem input.floaty{width:250px}#reportProblem select.floaty{width:256px}#reportProblem br.floaty{clear:both}#reportProblem textarea{width:405px}#reportProblemForm .errorField{border:solid 1px #DC143C !important;background-color:#FFFAFA !important}#reportProblemForm #pr_browser{margin:5px 0 5px 0px;font-size:0.8em;color:#666} #reportProblem .boxHeader{font-size:1.3em;margin:-11px -22px 10px -11px;padding:7px} * html #reportProblem label.floaty{width:100px;display:inline;float:left;padding:10px 0;text-align:left;margin:0}* html #reportProblem input.floaty,* html #reportProblem select.floaty,* html #reportProblem textarea{width:425px;display:inline;float:left;margin:7px 0 7px 10px}* html form#reportProblem{position:relative}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="SI%20Registers%20Detailed%20-%20en64%20wiki_files/load.css">
+<meta name="generator" content="MediaWiki 1.34.4">
+<meta name="description" content="The SI is very similar to the PI for obvious reasons. It is used mainly for accessing the  pifram... which will be dicussed in the next section.">
+<meta name="alexaVerifyID" content="CTcaaiwZDPTElMKyQj4OtlddZNQ">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="http://images.shoutwiki.com/en64/6/64/Favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://en64.shoutwiki.com/w/opensearch_desc.php" title="en64 wiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="http://en64.shoutwiki.com/w/api.php?action=rsd">
+<link rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">
+<link rel="alternate" type="application/atom+xml" title="en64 wiki Atom feed" href="http://en64.shoutwiki.com/w/index.php?title=Special:RecentChanges&amp;feed=atom">
+<!--[if lt IE 9]><script src="/w/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+<meta http-equiv="origin-trial" content="A9ZgbRtm4pU3oZiuNzOsKcC8ppFSZdcjP2qYcdQrFKVzkmiWH1kdYY1Mi9x7G8+PS8HV9Ha9Cz0gaMdKsiVZIgMAAAB7eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A3HucHUo1oW9s+9kIKz8mLkbcmdaj5lxt3eiIMp1Nh49dkkBlg1Fhg4Fd/r0vL69mRRA36YutI9P/lJUfL8csQoAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A9ZgbRtm4pU3oZiuNzOsKcC8ppFSZdcjP2qYcdQrFKVzkmiWH1kdYY1Mi9x7G8+PS8HV9Ha9Cz0gaMdKsiVZIgMAAAB7eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A3HucHUo1oW9s+9kIKz8mLkbcmdaj5lxt3eiIMp1Nh49dkkBlg1Fhg4Fd/r0vL69mRRA36YutI9P/lJUfL8csQoAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><link rel="preload" href="SI%20Registers%20Detailed%20-%20en64%20wiki_files/integrator.js" as="script"><script type="text/javascript" src="SI%20Registers%20Detailed%20-%20en64%20wiki_files/integrator.js"></script><link rel="preload" href="SI%20Registers%20Detailed%20-%20en64%20wiki_files/integrator_002.js" as="script"><script type="text/javascript" src="SI%20Registers%20Detailed%20-%20en64%20wiki_files/integrator_002.js"></script><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1px; bottom: 2px; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style></head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-SI_Registers_Detailed rootpage-SI_Registers_Detailed skin-vector action-view"><div id="MathJax_Message" style="display: none;"></div>
+<div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main" style="height: auto !important;"><div class="mw-notification-area mw-notification-area-layout" id="mw-notification-area" style="display: none;"></div>
+	<a id="top"></a>
+	<div id="siteNotice" class="mw-body-content"><!-- Begin leaderboard ad (ShoutWikiAds) -->
+		<div id="vector-leaderboard-ad" class="vector-ad noprint"><!---<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>--->
+<!-- Leaderboard Actual -->
+<ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-9875134714191706" data-ad-slot="8512670076" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:1200px;background-color:transparent;" tabindex="0" title="Advertisement" aria-label="Advertisement"><ins id="aswift_0_anchor" style="display: block; border: medium none; height: 280px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 1200px; background-color: transparent; overflow: visible;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:1200px;height:280px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" src="SI%20Registers%20Detailed%20-%20en64%20wiki_files/ads.html" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!1" data-google-query-id="CNfRg82i2O4CFYVlFQgdCKcGnQ" data-load-complete="true" width="1200" height="280" frameborder="0"></iframe></ins></ins></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+			<!-- End leaderboard ad (ShoutWikiAds) -->
+</div>
+	<div class="mw-indicators mw-body-content">
+</div>
+
+	<h1 id="firstHeading" class="firstHeading" lang="en">SI Registers Detailed</h1>
+	
+	<div id="bodyContent" class="mw-body-content">
+		<div id="siteSub" class="noprint">From en64 wiki</div>
+		<div id="contentSub"></div>
+		
+		
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Jump to navigation</a>
+		<a class="mw-jump-link" href="#p-search">Jump to search</a>
+		<div id="mw-content-text" dir="ltr" class="mw-content-ltr" lang="en"><div class="mw-parser-output"><p><i>Most taken from Lac's hw-dox.</i><br>
+</p>
+<div id="toc" class="toc"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none"><div class="toctitle" dir="ltr" lang="en"><h2>Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#SI_.28serial_interface.29"><span class="tocnumber">1</span> <span class="toctext">SI  (serial interface)</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#SI_DMA_transfer"><span class="tocnumber">1.1</span> <span class="toctext">SI DMA transfer</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#SI_DMA_wait"><span class="tocnumber">1.2</span> <span class="toctext">SI DMA wait</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#PIF_Usage"><span class="tocnumber">2</span> <span class="toctext">PIF Usage</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Command_Processing"><span class="tocnumber">2.1</span> <span class="toctext">Command Processing</span></a></li>
+</ul>
+</li>
+</div>
+
+<h1><span id="SI_(serial_interface)"></span><span class="mw-headline" id="SI_.28serial_interface.29">SI  (serial interface)</span></h1>
+<p>The SI is very similar to the PI for obvious reasons. It is used 
+mainly for accessing the  pifram... which will be dicussed in the next 
+section.<br>
+</p>
+<h2><span class="mw-headline" id="SI_DMA_transfer">SI DMA transfer</span></h2>
+<ol><li>Wait for previous dma transfer to finish (see next explanation)</li></ol>
+<ol><li>Write the physical dram address of the dma transfer to SI_DRAM_ADDR_REG</li></ol>
+<ol><li>Write PIF_RAM_START to the SI_PIF_ADDR_RD64B_REG or the 
+SI_PIF_ADDR_WR64B_REG, depending on what you wish to do (read or write).
+ This will cause a 64B read or write between pif_ram and rdram.</li></ol>
+<p><br>
+</p><p>NOTE: The SI addr must be 2 byte aligned, and the rdram address 
+must 8-byte aligned. Once again make sure you write back the cache lines
+ and invalidate the cache lines if needed, or you will run into trouble.
+</p>
+<h2><span class="mw-headline" id="SI_DMA_wait">SI DMA wait</span></h2>
+<ol><li>Read SI_STATUS_REG then AND it with 0x3, if its true... then wait until it is not true.<br></li></ol>
+<p>NOTE: Look at RCP.H for more information on the SI_STATUS_REG and the SI in general.
+<br>
+</p>
+<h1><span class="mw-headline" id="PIF_Usage">PIF Usage</span></h1>
+<ul><li>New in v0.7*<br></li></ul>
+<p>In previous versions of this document I regret to say that when I 
+explained how the pif command structure works I really goofed up. A lot 
+of the information was based on speculation and was not tested enough to
+ be proven. In this version I explain a totally different understanding 
+of how the pif command processing is done by the pif chip.  So if you 
+are going off the information from previous dox, I seriously suggest you
+ read this section again.  It is much more detailed and logical now.<br>
+</p><p>If you have done research and peeked at the RCP.h file you should
+ already know some things about the pif.  The SI is used to send 
+commands to the pif ram that tell the pif what to do.  The SI is also 
+used to read the results of those commands back. You can tell the pif to
+ do alot of stuff. for instance... reading joysticks, reading mempacks, 
+detecting joysticks, detecting mempacks, activating the rumblepack, 
+detecting the rumble pack, reading cartridge eeprom... etc. <br>
+</p><p>Below is a detailed view of pif command structure processing and an example of using them to perform some operations.<br>
+</p>
+<pre>   At First, this is how pif ram should be visualized:
+
+   |{Diagram 1.0}|
+
+   [64byte block] at 0xbfc007c0 (1fc007c0)
+   {         
+    00 00 00 00&nbsp;: 00 00 00 00 - 8 bytes 
+    00 00 00 00&nbsp;: 00 00 00 00 - 8 bytes
+    00 00 00 00&nbsp;: 00 00 00 00 - 8 bytes
+    00 00 00 00&nbsp;: 00 00 00 00 - 8 bytes
+    00 00 00 00&nbsp;: 00 00 00 00 - 8 bytes
+    00 00 00 00&nbsp;: 00 00 00 00 - 8 bytes
+    00 00 00 00&nbsp;: 00 00 00 00 - 8 bytes
+    00 00 00 00&nbsp;: 00 00 00 00 - 8 bytes
+   }                       ^^pif status/control byte
+
+   Commands are processed from any byte in pifram. ie: The pif chip steps thru each byte to load commands.
+
+   Each command has a structure like so:
+
+   byte 1 (t) = x number of bytes to send to pif chip  
+   byte 2 (r) = x number of bytes to recieve from pif chip
+   byte 3 (c) = Command type
+</pre>
+<h2><span class="mw-headline" id="Command_Processing">Command Processing</span></h2>
+<p>The pif chip constantly looks at the last byte of pifram and uses it 
+sort of as a semaphore to decide what to do with pifram. This last byte I
+ will refer to as the status byte or the control byte. If the pif chip 
+sees the control byte has been set to 01  (bit 0) it will know there are
+ commands waiting to be processed in pifram.  After it has decided this,
+ it goes through each byte of pifram in a scanning process in order to 
+execute commands. The Scanning process is described below:
+</p>
+<pre>   while(not end of pifram)
+            t = get byte
+            if t &gt;= 0 then
+                     r get byte
+                     send next t number of bytes to pif chip
+                     do pif chip command execution
+                     if executed then
+                        get r bytes from pif chip
+                     end if
+                     increment channel
+            else if t==fe then
+                     exit while loop
+            end if
+
+   end while
+</pre>
+<p>The t value is very important to the processing. If it is a negative 
+value then it does basically nothing but read the next byte into t 
+again.If it is a positive value or zero we know it needs to do 
+something. It now gets the next byte from pifram and puts it into r. r 
+is used later to tell how much data to get back from pifram. Next it 
+sends all the bytes needed for the command to the pif chip... t being 
+the x number of bytes to send. The pif chip now has all the data it 
+needs to _attempt_ to execute a command. If we sent 0 bytes to the pif 
+chip it will not execute a command and we will receive no bytes from the
+ pif chip in r. But the channel counter (I will explain channels later) 
+will increment even if no command was really executed. A t value of 0 is
+ basically a null command. When the pif chip executes certain commands 
+it expects certain limits on values for t and r. Usually these values 
+are fixed. If the values are not what it expects it will attempt to 
+process the command. If it could not process the command it will let you
+ know by setting the r value in pifram with an error value I will 
+describe later. It is a good idea to realize that bits 6 and 7 of the r 
+value are not to be used by the pif command. These are actually the 
+error bits. ie: MASK r &amp;= ~0xC0
+<br>
+</p>
+<pre>
+   |{Diagram 1.0b}|
+
+
+           Command Types:
+        
+         | Command |       Description        |t |r |
+         +---------+--------------------------+-----+
+         |   00    |   request info (status)  |01|03|
+         |   01    |   read button values     |01|04|
+         |   02    |   read from mempack slot |03|21|
+         |   03    |   write to mempack slot  |23|01|
+         |   04    |   read eeprom            |02|08|
+         |   05    |   write eeprom           |10|01|
+         |   ff    |   reset                  |01|03|
+              NOTE: values are in hex
+
+==Channels==
+
+The pif commands operate on certain channels in the n64. The channels can also be refered to as ports. The n64 has 8(?) channels (1-5), though 6, 7, 8 aren't normally used (reserved for RTC?). The first 4 channels (channels 0-3) are the joystick ports. The last two channels (4 and 5) I am pretty sure are in the cartridge port. Carts that have eeprom have it at either channel 4 or 5 or both. There are some carts that have two eeprom chips in them, and I believe channel 5 is used for the 2nd eeprom in these carts... Although I have not tested this theory.
+
+
+   To get a better understanding of how all this works, here is an example on how to build a command for reading a joystick:
+
+   * Init the joysticks for reading
+
+   |{Diagram 1.1}|
+
+     Send the pif command block to pifram using the SI DMA
+
+     -----------------------------++------------------------------
+     such a block to read 4 joys: ||  such a block to read 1 joy:
+      [64byte block]              ||   [64byte block]
+      {      command  data        ||   {
+     joy1  ff 010401 - ffffffff   ||  joy1  ff 010401 - ffffffff
+     joy2  ff 010401 - ffffffff   ||        ff ffffff - ffffffff
+     joy3  ff 010401 - ffffffff   ||        ff ffffff - ffffffff
+     joy4  ff 010401 - ffffffff   ||        ff ffffff - ffffffff
+           fe 000000 - 00000000   ||        fe 000000 - 00000000  
+           00 000000 - 00000000   ||        00 000000 - 00000000
+           00 000000 - 00000000   ||        00 000000 - 00000000
+           00 000000 - 00000001   ||        00 000000 - 00000001
+      }                           ||    }
+     -----------------------------++------------------------------
+
+      After sending this the joystick values will now be updated in pif RAM
+
+NOTE: the ffffffff is put into the data column just for filling the space that the pif chip will write the data to. You can put anything there because the pifchip will never try to process it, because it skips past all bytes it writes the r bytes to.
+
+
+     0xff 
+     |
+     0xff is padding so that the joystick values end up in the 2nd column, this is done because it is convenient to align the data when reading the pifram back to rdram.  It is not necessary to align it, so this ff is not really needed. IE: 010401ff would work just fine, but the joystick values would start at the 4th byte rather than the 5th.
+
+     0x010401 is the command that reads the joystick values.
+     |
+   t 0x01 says we are going to send 1 byte (the command type).
+   r 0x04 says we are going to read 4 bytes (into the data column)
+   c 0x01 is the command type (read button values).
+
+      Here is the step by step process in which the pif chip processes this
+      command block:
+      NOTE: channel always starts out at 0.
+
+      1. reads in ff into t
+         tx &lt; 0 so it does nothing
+      2. reads in 01 into t
+      3. reads in 04 into r
+      4. send tx number of bytes to pif chip (just send the command 01)
+      5. pif chip executes the command sucessfully and sends no error bytes
+      6. pif chip sends r bytes back to pifram
+      7. pif chip increments the channel.
+      8. pif chip now skips over the r bytes it wrote and then
+         basically returns to step 1
+      9. once it hits fe or is at the end of pifram, it sets the control
+         byte to 0 and exits.
+         
+    * end Init joysticks
+
+    NICE INFO:
+
+     The 0x01 (diagram 1.1) tells the pif there is a new command block to be
+     processed.  Without this the command block will not be executed. You will
+     notice that the reason for the one being there is actually that it is
+     being written to the pif's status control. This may not be actually what
+     it is called but it seems to serve a similar function.  This is the same
+     byte you are writing to when you initialize the pif (see: * init pif).
+     You will also notice that this byte will be set to 0x80 after holding
+     down the reset button.  0x80 means the pif is busy. The value will be
+     set to 0x00 after you let go of the reset button or .5 seconds passes
+     (whichever comes first).
+     After this .5 seconds a NMI will be generated which will reset the
+     r4300 and the n64.  Also note that this byte is set to 0x00 once a
+     command has been executed by the pif.  This is why when you read the pif
+     ram after sending a command the last byte is no longer 1, but 0.  If it
+     is still 1 after reading it back, then you know your command didnt
+     execute.
+
+    * Read Joysticks
+        The joy values can be read from the spaces marked by 0xFFFFFFFF in the
+        block above.  Of course you must first DMA from pif ram back to rdram.
+        Or you can just read the data directly by making a pointer to
+        0xbfc007c0 (start of the pif_ram), although I would not recommend that
+        method.
+        Here would be a sufficient C code to read in a controller's values:
+
+        void siReadJoy(int cont,OSContPad *p)
+        {                                     
+         unsigned char pif_block[64];
+         si_DMA_from_pif (pif_block); 
+         memcpy (p,pif_block+((cont*8)+4),4);
+        }
+
+        The OSContPad structure is in the libultra header file OS.H
+
+    * end Read Joysticks
+
+    * Detecting if Joysticks are connected
+
+      This is very easy and can be done after you send any command to read
+      or write something to the controllers.  Whenever you try and execute a
+      command on a channel and that device on the channel (like a joystick)
+      is not present the pif will write an error value to the r byte of the
+      command that the error occured in. For instance... lets say you did the
+      example above and you tried to read controller values.  Well if you read
+      the controller values for all four joystick channels you will notice that
+      if you don't have a joystick physically plugged in to the port(s) you are
+      reading from, then no values will appear.  Well I think this is an obvious
+      result.  But also notice that the pif will put an error value into the r
+      byte of the command.
+
+      The Error values are as follows:
+
+      0x00 - no error, operation successful.
+      0x80 - error, device not present for specified command.
+      0x40 - error, unable to send/recieve the number bytes for command type.
+
+      ie: bits 6 and 7 of the r value are never used in commands. MASK: 0xC0
+
+      This would be an example of the result of trying to read 4 controllers
+      (like in above example) and only a joystick in port 3 is connected:
+
+   |{Diagram 1.2}|
+
+     -----------------------------------+
+      [64byte block] read from pif ram  |
+      {    command    data              |
+     joy1  ff018401 - ffffffff          &lt;--- 8 is the error code for device
+     joy2  ff018401 - ffffffff          |    not present.
+     joy3  ff010401 - 00000000          &lt;--- read was successful on this 
+     joy4  ff018401 - ffffffff          |    channel, no buttons being pressed
+           fe000000 - 00000000          |
+           00000000 - 00000000          |
+           00000000 - 00000000          |
+           00000000 - 00000000          |
+      }                                 |
+     -----------------------------------+
+
+      This would be an example of the result of trying to read 5 bytes for the
+      read joystick command:  (all 4 joysticks are connected)
+
+   |{Diagram 1.3}|
+
+     -----------------------------------+
+      [64byte block] sent to pif ram    |
+      {    command    data              |
+     joy1  ff010501 - ffffffff          &lt;---
+     joy2  ff010501 - ffffffff          &lt;--- note we tried to read 5 instead
+     joy3  ff010501 - ffffffff          &lt;--- of 4.  The device only allows you
+     joy4  ff010501 - ffffffff          &lt;--- to read 4 bytes with that command
+           fe000000 - 00000000          |
+           00000000 - 00000000          |
+           00000000 - 00000000          |
+           00000000 - 00000001          |
+      }                                 |
+     -----------------------------------+
+     -----------------------------------+
+      [64byte block] read from pif ram  |
+      {    command    data              |
+     joy1  ff014501 - 00000000          &lt;--- (note that no buttons are being
+     joy2  ff014501 - 00000000          &lt;---  pressed on any controller)
+     joy3  ff014501 - 00000000          &lt;--- notice the 4. It is the error
+     joy4  ff014501 - 00000000          &lt;--- code for send/recieve.
+           fe000000 - 00000000          |    
+           00000000 - 00000000          |
+           00000000 - 00000000          |
+           00000000 - 00000000          |
+      }                                 |
+     -----------------------------------+
+
+      NOTE: Even though we tried to read an extra byte for the buttons values
+            the button values will still appear... but the error code will
+            still be generated because there is only 4 bytes to be read, not
+            5.
+
+    * end Detecting if Joysticks are connected 
+
+    * Getting controller status
+
+     0x010300 is the command used to get the controller status.
+     |
+     0x01 says we are going to send 1 byte (the command type).
+     0x03 says we are going to read 3 bytes (into the data column)
+     0x00 is the command type (get controller status).
+
+     Here is an example of reading the status from 4 controllers.
+     Only the first two controllers are actually plugged in.
+     There is a pack in the 1st controller and there is no pack in the second
+     controller.
+
+   |{Diagram 1.4}|
+
+     -----------------------------------+
+      [64byte block] sent to pif ram    |
+      {    command    data              |
+     joy1  ff010300 - ffffffff          |
+     joy2  ff010300 - ffffffff          |
+     joy3  ff010300 - ffffffff          |
+     joy4  ff010300 - ffffffff          |
+           fe000000 - 00000000          |
+           00000000 - 00000000          |
+           00000000 - 00000000          |
+           00000000 - 00000001          |
+      }                                 |
+     -----------------------------------+
+     -----------------------------------+
+      [64byte block] read from pif ram  |
+      {    command    data              |
+     joy1  ff010300 - 050001ff          &lt;--- notice only 3 bytes were read
+     joy2  ff010300 - 050002ff          &lt;--- that is why the last byte is 
+     joy3  ff018300 - ffffffff          |    still ff                     
+     joy4  ff018300 - ffffffff          |                          
+           fe000000 - 00000000          |    
+           00000000 - 00000000          |
+           00000000 - 00000000          |
+           00000000 - 00000000          |
+      }                                 |
+     -----------------------------------+
+
+    The first two bytes in the data column is the controller type.  I'm not
+    exactly sure what use this is... do steering wheels have a different
+    controller type? I don't know.
+    The 3rd byte is useful.  Its for detecting if there is something plugged
+    into the mempack slot on the controller.
+    1 = something is plugged into the mempack slot
+    2 = nothing plugged in
+    4 = pad address crc from controller slot read/write (mempack slot)
+
+    * end Getting controller status
+
+    * Resetting the controllers
+
+      WARNING: Some of this info could be wrong, I have yet to test fully.
+
+      This command is performed by the osContReset() function in libultra.
+
+      0x0103ff is the command for resetting
+      |
+    t 0x01 says we are going to send 1 byte (the command type).
+    r 0x03 says we are going to read 3 bytes (into the data column)
+    c 0xff is the command type (reset).
+
+      As stated in the osContReset() man page... this command will reset all
+      the joysticks and return the values to a neutral position.  I know this
+      is needed for calibration.  For instance, if you turn on the n64 with
+      the analog stick held in an off-center position then the values will
+      be off-center until the controller is reset.  What is also nice about
+      this command is that it can be used to not only reset the controllers
+      but grab the status of the controllers at the same time.  This is why
+      we are reading three bytes (just like in the example above). I am not
+      sure what happens when you try this command on channels &gt;= 4.
+      See Diagram 1.4
+
+
+    * End Resetting the controllers
+
+                                   
+
+
+    * reading/writing cart eeprom
+
+      The cart eeprom is better know as the cart sram... its the little
+      eeprom chip that is in alot of the 1st generation cartridges and some
+      of the newer cartridges.  Although people call it sram, it really isn't.
+      Its eeprom, which is accessed much differently that sram.  Reading and
+      writing sram is described in the PI section of this document.
+      Eeprom is also what is in the mempacks, which is described in the next
+      section.  Cart eeprom is written to using pif commands. The way commands
+      and data are formatted in pifram is no different than the way that they
+      are done for accessing the controller ports.
+
+
+      The first 4 bytes are zero because this is not a controller command and
+      we will not be accessing the 4 joystick channels. IE: when the pif chip
+      processes a command block, if it reads a 0 in t then it knows it will
+      be executing a NOP command and incrementing the channel counter.
+
+      -Probing the eeprom-
+
+      The first thing you must do is test to see if the eeprom is there.
+      Normally you could test if the eeprom is there by just attempting to
+      write some bytes to it and reading them back.  Of course we do not want
+      to do this because eeprom contains important save-game data we would not
+      like to destroy just for a simple test.  So we will have to "probe" the
+      eeprom to detect if its there.  You do this in a similar way that you
+      get the status of the controllers.
+
+      Here is an example pif block to send to the pif ram to probe for eeprom:
+
+   |{Diagram 1.5}|
+
+      The cartridge is assumed to have 512 bytes of eeprom in it.
+
+      ----------------------------------+
+      [64byte block] sent to pif ram    |
+      {                                 |
+           00000000 - ff010300          &lt;-- this command should look familiar.
+           ffffffff - fe000000          |   notice when sending any command   
+           00000000 - 00000000          |   for eeprom we should have made
+           00000000 - 00000000          |   sure 4 other channels have been 
+           00000000 - 00000000          |   processed.
+           00000000 - 00000000          |
+           00000000 - 00000000          |
+           00000000 - 00000001          |
+      }                                 |
+      ----------------------------------+
+      ----------------------------------+
+      [64byte block] read from pif ram  |
+      {                                 |
+           00000000 - ff010300          |
+           008000ff - fe000000          &lt;-- this result shows that there is
+           00000000 - 00000000          |   an eeprom present.
+           00000000 - 00000000          |
+           00000000 - 00000000          |    
+           00000000 - 00000000          |
+           00000000 - 00000000          |
+           00000000 - 00000000          |
+      }                                 |
+      ----------------------------------+
+
+      The 3 byte status is read into the left column (3rd word).  
+      the 0x8000 from that read tells us that there is eeprom there.  If the
+      cartridge did not have any eeprom in it the buffer read from pif ram
+      would of looked like:
+
+
+   |{Diagram 1.6}|
+
+      ----------------------------------+
+      [64byte block] read from pif ram  |
+      {                                 |
+           00000000 - ff018300          &lt;-- tells us there was no eeprom there
+           ffffffff - fe000000          |   to probe. (error bits)
+           00000000 - 00000000          |
+           00000000 - 00000000          |
+           00000000 - 00000000          |    
+           00000000 - 00000000          |
+           00000000 - 00000000          |
+           00000000 - 00000000          |
+      }                                 |
+      ----------------------------------+
+
+    -Writing cart eeprom-
+
+      The command for writing the cart eeprom is
+
+     0x0a0105xx
+     |
+   t 0x0a says we are going to send 10 bytes to the pif (command+offset+data)
+   r 0x01 says we are going to get 1 byte (the error byte)
+   c 0x05 is the command type (write eeprom)
+     xx is the offset to write to
+     ^^ this value can differ depending on the size of the eeprom. The offset
+      is the number of the 8-byte block to write to. ie: if you have 512 bytes
+      of eeprom in the cart, then this value can be anywhere between 0x0 and
+      0x40.
+
+   |{Diagram 1.7}|
+
+      The cartridge is assumed to have 512 bytes of eeprom in it.
+
+      ----------------------------------+
+      [64byte block] sent to pif ram    |
+      {                                 |
+           00000000 - 0a010521          &lt;-- this command will write the next  
+           deadbeef - a5b6c7d8          |   8 bytes to block 0x21 in eeprom.  
+           ffffffff - fe000000          |   
+           00000000 - 00000000          |   
+           00000000 - 00000000          |    
+           00000000 - 00000000          |
+           00000000 - 00000000          |
+           00000000 - 00000001          |
+      }                                 |
+      ----------------------------------+
+      ----------------------------------+
+      [64byte block] read from pif ram  |
+      {                                 |
+           00000000 - 0a010521          |                                     
+           deadbeef - a5b6c7d8          |                                     
+           00ffffff - fe000000          &lt;-- the 00 written notifies that the
+           00000000 - 00000000          |   eeprom was written to.  This value
+           00000000 - 00000000          |   is that 1 extra error byte that 
+           00000000 - 00000000          |   the command specifies.
+           00000000 - 00000000          |
+           00000000 - 00000000          |
+      }                                 |
+      ----------------------------------+
+
+
+    -Reading cart eeprom-
+
+      The command for reading the cart eeprom is
+     
+     0x020804xx 
+     |
+   t 0x02 says we are going to send 2 bytes to the pif (command+offset)
+   r 0x08 says we are going to get 8 bytes (1 block read from eeprom)
+   c 0x04 is the command type (read eeprom)
+     xx is the offset to read from
+     ^^ this value can differ depending on the size of the eeprom. The offset
+      is the number of the 8-byte block to read from. ie: if you have 512
+      bytes of eeprom in the cart, then this value can be anywhere between
+      0x0 and 0x40.
+
+   |{Diagram 1.8}|
+
+      The cartridge is assumed to have 512 bytes of eeprom in it.
+
+      ----------------------------------+
+      [64byte block] sent to pif ram    |
+      {                                 |
+           00000000 - 02080409          &lt;-- this command will read 0x08 bytes 
+           ffffffff - fe000000          |   from block 0x09 in eeprom.
+           00000000 - 00000000          |   
+           00000000 - 00000000          |   
+           00000000 - 00000000          |    
+           00000000 - 00000000          |
+           00000000 - 00000000          |
+           00000000 - 00000001          |
+      }                                 |
+      ----------------------------------+
+      ----------------------------------+
+      [64byte block] read from pif ram  |
+      {                                 |
+           00000000 - 02080409          |                                     
+           deadbeef - a5b6c7d8          &lt;-- the eight bytes read are stored   
+           00000000 - 00000000          |   here.
+           00000000 - 00000000          |
+           00000000 - 00000000          |
+           00000000 - 00000000          |
+           00000000 - 00000000          |
+           00000000 - 00000000          |
+      }                                 |
+      ----------------------------------+
+
+    * end reading/writing cart eeprom
+
+
+    * reading/writing mempack port
+
+      Important NOTE:   As far as I know... mempack eeprom can be only 32k in
+                        size.  Every address beyond 32768 is out of the
+                        mempack address range and is most likely data not
+                        meant for mempack eeprom... but most likely meant for
+                        the Rumblepack or some other peripheral that is
+                        connected to the controller.
+
+
+      The command for reading from the mempack is
+
+    
+     0x032102 xxxx 
+     |
+ t 0x03 says we are going to send 3 bytes to the pif (command+16bit_offset)
+        NOTE: the offset also contains a 5-bit address CRC. The offset must
+              be aligned on a 32 byte boundry, so the address crc is in the
+              low 5 bits. Also the address must be shifted right 5 bits. The
+              address is really similar to the cart eeprom address in that it
+              is an address to a block, but in this case it is a 32 byte
+              block.
+ r 0x21 says we are going to get 33 bytes, that is one 32-byte-block read from
+        the mempack slot + 1 byte for the data CRC (described later)
+ c 0x02 is the command type (read mempack slot)
+     xxxx is the offset to read from
+        
+
+
+      The command for write to the mempack is
+
+     230103xxxx
+     |
+ t 0x23 says we are going to send 35 bytes to the pif
+        (command + 2-bytes-offset + data)
+        NOTE: the offset also contains a 5-bit address CRC. The offset must
+              be aligned on a 32 byte boundry, so the address crc is in the
+              low 5 bits. Also the address must be shifted right 5 bits. The
+              address is really similar to the cart eeprom address in that it
+              is an address to a block, but in this case it is a 32 byte
+              block.
+ r 0x01 says we are going to get 1 byte for the data CRC (described later)
+ c 0x03 is the command type (read mempack slot)
+     xxxx is the offset to read from
+
+    * end reading/writing mempack port
+
+    * mempack port checksum
+
+      Whenever you write / read data you must include an address and data
+      CRC. These are stored in two different locations in the command
+      structure (see the two commands above).
+      These CRC algorithms are described below.
+      NOTE: this is the data CRC when something is plugged into the mempack
+      port.  The data you get read or write to the mempack port obvious will
+      need or have a data CRC... but when something is not plugged into the
+      mempack port, then the CRC is calculated the same way except the final
+      8-bit result is NOT'd. You might wonder why there would even be a CRC
+      when reading from the mempack port and nothing is plugged in.  Well
+      basically when nothing is plugged in, data is still read, but it is not
+      valid data. This data is usually all 0's. The data CRC algo is still
+      calculated but the result is of course NOT'd to let you know that the
+      data is erronous.
+
+
+*******Data CRC routine (written in Pascal for pseudo-code purposes) ********
+
+function ContDataCrc (data: PByteArray): byte;  { PByteArray is a byte pointer }
+var
+  temp,temp2   : byte;
+  i,j          : Integer;
+begin
+      temp:=0;
+      for i&nbsp;:= 0 to 32
+         do begin
+              for j&nbsp;:= 7 downto 0
+              do begin
+                   if ((temp and $80)&lt;&gt;0) then temp2&nbsp;:= $85 else temp2&nbsp;:= $00;
+                   temp&nbsp;:= temp shl 1;
+                   if (i = 32)
+                   then begin
+                          temp&nbsp;:= temp or 0;
+                        end
+                   else begin
+                          if (((data[i]) and ($01 shl j))&lt;&gt;0)
+                          then temp:=(temp or 1) else temp:=(temp or 0);
+                        end;
+                   temp&nbsp;:= (temp xor temp2);
+              end;
+         end;
+
+        ContDataCrc:=temp;
+end;
+
+      Address CRC routine:
+
+*******Addr CRC routine (written in Pascal for pseudo-code purposes) ********
+
+function PackAddrCRC (int16 addr): byte;
+var
+  t,t2   : byte;
+  i,j    : Integer;
+begin
+        t:=0;
+        for i&nbsp;:= 0 to 15
+          do begin
+               if ((t and $10)&lt;&gt;0) then t2&nbsp;:= $15 else t2&nbsp;:= $00;
+               t&nbsp;:= t shl 1;
+               if ((addr and $400)&lt;&gt;0) then t&nbsp;:= (t or $1)
+               addr&nbsp;:= addr shl 1;
+               t&nbsp;:= t xor t2;
+          end
+        PackAddrCRC:=(t and $1f);
+end;
+
+    * end mempack port checksum
+
+
+    * Rumblepak
+
+      The Rumblepack, like the Mempack connects to the mempack port on the
+      bottom off the n64 controller.  Therefore you read/write to the mempack
+      port in order to gain access to the rumble pack.
+
+      -Checking for connection-
+
+      In order to check if what is plugged into the mempack port is a rumble
+      pack or a mempack, you need to do the following:
+
+      1. Use the controller command to get the status (see Diagram 1.4)
+         This way you will at least know something is plugged into the port.
+         Or you could just skip to step two and if the data crc you get back
+         is NOT'd you will know nothing is plugged in.
+      2. Using the mempack read command, read offset block 0x400.  This
+         offset would be written as 0x8001 in the actual command.  Because,
+         remember you are storing the address crc in the lower 5 bits.
+      3. If the data you get is all 0x80's then you know a Rumblepack is
+         there. If the data is 0x00's then its not a Rumblepack and is most
+         likely a Mempack.
+
+      -Rumbling-
+
+      The Rumblepack rumbles based on two values... OFF and ON.  There is no
+      intensity values involved in rumbling.  The whole idea is that the
+      slower you turn it off and on, the higher the intensity rumble and vice
+      versa.
+      To turn the Rumblepack on you simply write a 32 byte block of 01's
+      to offset 0x600. And to turn it off you write 00's instead. Its as
+      simple as that... But remember you are using the standard mempack
+      port writing commands so all the rules apply (CRC'ing etc...).
+
+    * end Rumblepak
+</pre>
+<!-- 
+NewPP limit report
+Parsed by bellow.shoutwiki‐servers.com
+Cached time: 20210207130453
+Cache expiry: 86400
+Dynamic content: false
+Complications: []
+CPU time usage: 0.012 seconds
+Real time usage: 0.009 seconds
+Preprocessor visited node count: 33/1000000
+Preprocessor generated node count: 0/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 28407/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key en64_wiki:pcache:idhash:95-0!canonical and timestamp 20210207130453 and revision id 527
+ -->
+</div></div>
+		
+		<div class="printfooter">Retrieved from "<a dir="ltr" href="http://en64.shoutwiki.com/w/index.php?title=SI_Registers_Detailed&amp;oldid=527">http://en64.shoutwiki.com/w/index.php?title=SI_Registers_Detailed&amp;oldid=527</a>"</div>
+		
+		<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>
+		<div class="visualClear"></div>
+		
+	</div>
+</div>
+
+
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="http://en64.shoutwiki.com/w/index.php?title=Special:CreateAccount&amp;returnto=SI+Registers+Detailed" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="http://en64.shoutwiki.com/w/index.php?title=Special:UserLogin&amp;returnto=SI+Registers+Detailed" title="You are encouraged to log in; however, it is not mandatory [Alt+Shift+o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+							<li id="ca-nstab-main" class="selected"><span><a href="http://en64.shoutwiki.com/wiki/SI_Registers_Detailed" title="View the content page [Alt+Shift+c]" accesskey="c">Page</a></span></li><li id="ca-talk" class="new"><span><a href="http://en64.shoutwiki.com/w/index.php?title=Talk:SI_Registers_Detailed&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [Alt+Shift+t]" accesskey="t">Discussion</a></span></li>						</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<input type="checkbox" class="vectorMenuCheckbox" aria-labelledby="p-variants-label">
+						<h3 id="p-variants-label">
+							<span>Variants</span>
+						</h3>
+						<ul class="menu">
+													</ul>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+							<li id="ca-view" class="collapsible selected"><span><a href="http://en64.shoutwiki.com/wiki/SI_Registers_Detailed">Read</a></span></li><li id="ca-viewsource" class="collapsible"><span><a href="http://en64.shoutwiki.com/w/index.php?title=SI_Registers_Detailed&amp;action=edit" title="This page is protected.
+You can view its source [Alt+Shift+e]" accesskey="e">View source</a></span></li><li id="ca-history" class="collapsible"><span><a href="http://en64.shoutwiki.com/w/index.php?title=SI_Registers_Detailed&amp;action=history" title="Past revisions of this page [Alt+Shift+h]" accesskey="h">View history</a></span></li>						</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu" aria-labelledby="p-cactions-label">
+						<input type="checkbox" class="vectorMenuCheckbox" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span></h3>
+						<ul class="menu">
+							<li id="ca-report-problem"><a href="#">Report a problem</a></li>						</ul>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+						<form action="/w/index.php" id="searchform">
+							<div id="simpleSearch">
+								<input type="search" name="search" placeholder="Search en64 wiki" title="Search en64 wiki [Alt+Shift+f]" accesskey="f" id="searchInput" autocomplete="off"><input type="hidden" value="Special:Search" name="title"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton">							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="http://en64.shoutwiki.com/wiki/Main_Page" title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id="p-navigation" aria-labelledby="p-navigation-label">
+			<h3 id="p-navigation-label">Navigation</h3>
+			<div class="body">
+								<ul>
+					<li id="n-mainpage-description"><a href="http://en64.shoutwiki.com/wiki/Main_Page" title="Visit the main page [Alt+Shift+z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="http://en64.shoutwiki.com/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [Alt+Shift+r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="http://en64.shoutwiki.com/wiki/Special:Random" title="Load a random page [Alt+Shift+x]" accesskey="x">Random page</a></li><li id="n-help-mediawiki"><a href="http://en64.shoutwiki.com/wiki/Help:Contents">Help about MediaWiki</a></li>				</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-tb" aria-labelledby="p-tb-label">
+			<h3 id="p-tb-label">Tools</h3>
+			<div class="body">
+								<ul>
+					<li id="t-whatlinkshere"><a href="http://en64.shoutwiki.com/wiki/Special:WhatLinksHere/SI_Registers_Detailed" title="A list of all wiki pages that link here [Alt+Shift+j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="http://en64.shoutwiki.com/wiki/Special:RecentChangesLinked/SI_Registers_Detailed" rel="nofollow" title="Recent changes in pages linked from this page [Alt+Shift+k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="http://en64.shoutwiki.com/wiki/Special:SpecialPages" title="A list of all special pages [Alt+Shift+q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="http://en64.shoutwiki.com/w/index.php?title=SI_Registers_Detailed&amp;printable=yes" rel="alternate" title="Printable version of this page [Alt+Shift+p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="http://en64.shoutwiki.com/w/index.php?title=SI_Registers_Detailed&amp;oldid=527" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="http://en64.shoutwiki.com/w/index.php?title=SI_Registers_Detailed&amp;action=info" title="More information about this page">Page information</a></li>				</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-ShoutWiki_messages" aria-labelledby="p-ShoutWiki_messages-label">
+			<h3 id="p-ShoutWiki_messages-label">ShoutWiki messages</h3>
+			<div class="body">
+						<ul><li><a href="http://www.shoutwiki.com/">ShoutWiki Home</a></li>
+			<li><a href="http://www.shoutwiki.com/wiki/Special:CreateWiki">Create a wiki</a></li><li><a href="http://www.shoutwiki.com/wiki/Forum:Index">ShoutWiki forum</a></li>
+</ul>			</div>
+		</div>
+				</div>
+		</div>
+		
+<!-- Begin skyscraper ad (ShoutWikiAds) -->
+<div id="column-google" class="vector-ad noprint"><script async="" src="SI%20Registers%20Detailed%20-%20en64%20wiki_files/adsbygoogle.js"></script>
+<!-- Skyscraper -->
+<ins class="adsbygoogle" style="display: inline-block; width: 120px; height: 600px;" data-ad-client="ca-pub-9875134714191706" data-ad-slot="4082470479" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:120px;background-color:transparent;" tabindex="0" title="Advertisement" aria-label="Advertisement"><ins id="aswift_1_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:120px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:120px;height:600px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" src="SI%20Registers%20Detailed%20-%20en64%20wiki_files/ads.html" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-google-query-id="CIeQhs2i2O4CFRjvdwodMKgCYg" data-load-complete="true" width="120" height="600" frameborder="0"></iframe></ins></ins></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<!-- End skyscraper ad (ShoutWikiAds) -->
+		<div id="footer" role="contentinfo">
+						<ul id="footer-info">
+								<li id="footer-info-lastmod"> This page was last edited on 13 June 2019, at 01:56.</li>
+								<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share Alike 3.0</a> unless otherwise noted.</li>
+							</ul>
+						<ul id="footer-places">
+								<li id="footer-places-privacy"><a href="http://www.shoutwiki.com/wiki/Privacy_policy" class="extiw" title="s:Privacy policy">Privacy policy</a></li>
+								<li id="footer-places-about"><a href="http://en64.shoutwiki.com/wiki/en64_wiki:About" title="en64 wiki:About">About en64 wiki</a></li>
+								<li id="footer-places-disclaimer"><a href="http://www.shoutwiki.com/wiki/Terms_of_use" class="extiw" title="s:Terms of use">Terms of use</a></li>
+								<li id="footer-places-piwik-optout-footer"><a class="piwik-footer-link piwik-opt-out" href="#">Piwik optout</a></li>
+								<li id="footer-places-mobileview"><a href="http://en64.shoutwiki.com/w/index.php?title=SI_Registers_Detailed&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+							</ul>
+										<ul id="footer-icons" class="noprint">
+										<li id="footer-copyrightico">
+						<a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="SI%20Registers%20Detailed%20-%20en64%20wiki_files/cc-by-sa.png" alt="Creative Commons Attribution-Share Alike 3.0" width="88" height="31"></a>					</li>
+										<li id="footer-poweredbyico">
+						<a href="https://www.mediawiki.org/"><img src="SI%20Registers%20Detailed%20-%20en64%20wiki_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/w/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /w/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"></a><a href="http://www.shoutwiki.com/"><img src="SI%20Registers%20Detailed%20-%20en64%20wiki_files/hosted_by_ShoutWiki.png" alt="Hosted by ShoutWiki" width="88" height="31"></a>					</li>
+									</ul>
+						<div style="clear: both;"></div>
+		</div>
+		
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.012","walltime":"0.009","ppvisitednodes":{"value":33,"limit":1000000},"ppgeneratednodes":{"value":0,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":28407,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"origin":"bellow.shoutwiki-servers.com","timestamp":"20210207130453","ttl":86400,"transientcontent":false}}});});</script>
+<!-- Piwik -->
+<script type="text/javascript">
+	var _paq = _paq || [];
+	_paq.push(['trackPageView']);
+	_paq.push(['enableLinkTracking']);
+	(function() {
+		var u="//piwik.staff.shoutwiki.com/";
+		_paq.push(['setTrackerUrl', u+'piwik.php']);
+		_paq.push(['setSiteId', '9518']);
+		var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+		g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+	})();
+</script>
+<noscript><p><img src="//piwik.staff.shoutwiki.com/piwik.php?idsite=9518" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code --><script async="" src="SI%20Registers%20Detailed%20-%20en64%20wiki_files/adsbygoogle_002.js"></script>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":130,"wgHostname":"bellow.shoutwiki-servers.com"});});</script>
+
+
+<ins class="adsbygoogle adsbygoogle-noablate" style="display: none !important;" data-adsbygoogle-status="done"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;" tabindex="0" title="Advertisement" aria-label="Advertisement"><ins id="aswift_2_anchor" style="display:block;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><iframe id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" src="SI%20Registers%20Detailed%20-%20en64%20wiki_files/ads_003.html" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-load-complete="true" frameborder="0"></iframe></ins></ins></ins><div style="display: none; font-size: 13px;" class="suggestions"><div class="suggestions-results"></div><div class="suggestions-special"></div></div><iframe id="google_osd_static_frame_6441790523227" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe></body><iframe id="google_esf" name="google_esf" src="SI%20Registers%20Detailed%20-%20en64%20wiki_files/zrt_lookup.html" style="display: none;" data-ad-client="ca-pub-9875134714191706"></iframe></html>
