@@ -1,5 +1,5 @@
 * What is it?
-Used to transfer data from the cart/disk drive to RDRAM. ONLY.
+Used to transfer data between the cart/disk drive and RDRAM. ONLY.
 
 * Doing the transfer
 1. Wait for previous dma transfer to finish (see next explanation)
