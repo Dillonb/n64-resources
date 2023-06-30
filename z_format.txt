@@ -1,0 +1,67 @@
+The RDP uses a priority encoding scheme to compress an eighteen-bit Z value into a fourteen-bit value consisting of a three-bit exponent, followed by an eleven-bit mantissa.
+This is a lossy compression scheme that minimises the reconstruction error for larger Z values.
+
+The exponent of the compressed value is first calculated by taking the leading one count of the seven most significant bits of the value.
+This operation will provide the three-bit value which is used as the exponent. Using the leading one count, we can reproduce up to seven bits of the original Z value whilst only using three-bits.
+This compression comes at the expense of smaller values, whose exponents use more bits than are necessary.
+
+One to seven bits can be represented using the exponent, meaning that the remaining number of bits is from seventeen to eleven.
+As the mantissa is eleven bits wide, up to six bits will have to be lost.
+
+Figure 1 shows the format of the eight possible exponent values and the following eleven bits (marked "m") which will be used as the mantissa.
+Any remaining blank bits will be lost during compression, and will contribution to the reconstruction error of the decompression operation.
+
+Figure 2 shows the layout of the fourteen-bit compressed Z value, with the three-bit exponent (marked "e"), and the eleven-bit mantissa (marked "m").
+
+17                                                                      0
++---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+| 0 | m | m | m | m | m | m | m | m | m | m | m |   |   |   |   |   |   |
++---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+  exponent = 0, discarded = 6 bits
+
++---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+| 1 | 0 | m | m | m | m | m | m | m | m | m | m | m |   |   |   |   |   |
++---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+  exponent = 1, discarded = 5 bits
+  
++---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+| 1 | 1 | 0 | m | m | m | m | m | m | m | m | m | m | m |   |   |   |   |
++---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+  exponent = 2, discarded = 4 bits
+
++---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+| 1 | 1 | 1 | 0 | m | m | m | m | m | m | m | m | m | m | m |   |   |   |
++---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+  exponent = 3, discarded = 3 bits
+
++---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+| 1 | 1 | 1 | 1 | 0 | m | m | m | m | m | m | m | m | m | m | m |   |   |
++---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+  exponent = 4, discarded = 2 bits
+
++---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+| 1 | 1 | 1 | 1 | 1 | 0 | m | m | m | m | m | m | m | m | m | m | m |   |
++---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+  exponent = 5, discarded = 1 bit
+
++---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+| 1 | 1 | 1 | 1 | 1 | 1 | 0 | m | m | m | m | m | m | m | m | m | m | m |
++---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+  exponent = 6, discarded = 0 bits
+
++---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+| 1 | 1 | 1 | 1 | 1 | 1 | 1 | m | m | m | m | m | m | m | m | m | m | m |
++---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+  exponent = 7, discarded = 0 bits
+
+Figure 1 - Eighteen-bit Z value
+
+13                                                      0
++---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+| e | e | e | m | m | m | m | m | m | m | m | m | m | m |
++---+---+---+---+---+---+---+---+---+---+---+---+---+---+
+
+Figure 2 - Fourteen-bit compressed Z value
+
+
+Written by https://github.com/KieronJ
